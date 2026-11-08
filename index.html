@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DragonSpire Interactive · AI Game Master</title>
+<meta name="description" content="DragonSpire runs Dungeons &amp; Dragons games inside Fantasy Grounds Unity, in Discord voice and on the web. It works because the AI is only one part of it.">
+<script>try{var t=localStorage.getItem("ds-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z M20 8 L26 17 V31 H14 V17 Z' fill='none' stroke='%23A8771A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/ds.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/a2.css">
+<link rel="stylesheet" href="assets/css/a3.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- SHELL: header (copy to every page; move aria-current="page" to that page's link) -->
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="logo" href="index.html" aria-label="DragonSpire Interactive, home" aria-current="page"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z"/><path d="M20 8 L26 17 V31 H14 V17 Z M14 22 H26 M14 26.5 H26"/></svg><span><span class="logo__word">DragonSpire</span><span class="logo__sub">Interactive</span></span></a>
+    <div class="site-nav__tools"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button><button class="site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-menu"><span class="site-nav__bars" aria-hidden="true"></span><span class="site-nav__toggle-text">Menu</span></button></div>
+    <nav class="site-nav__menu" id="site-menu" aria-label="Main">
+      <ul class="site-nav__links">
+        <li><a href="product.html">Product</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="company.html">Company</a></li>
+      </ul>
+      <a class="btn btn--secondary site-nav__cta" href="https://dragonspire.io">DragonSpire.io<span class="site-nav__ext" aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<!-- /SHELL: header -->
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="co-hero" aria-labelledby="h-hero">
+    <div class="container co-hero__grid">
+      <div class="co-hero__text">
+        <p class="eyebrow">DragonSpire Interactive</p>
+        <h1 id="h-hero">An AI game master built like software, not like a prompt.</h1>
+        <p class="lede">DragonSpire runs Dungeons &amp; Dragons games inside Fantasy Grounds Unity, in Discord voice and on the web. It works because the AI is only one part of it. A rules engine rolls the dice, databases remember the world, and tested code keeps the game fair.</p>
+      </div>
+      <figure class="diagram-frame co-hero__art">
+        <div class="diagram-frame__panel">
+<svg class="diagram draw-on-view" viewBox="80 0 320 600" role="img" aria-labelledby="hero-spire-t">
+<title id="hero-spire-t">Five chambers stacked as a spire: Cory at the top, then Dee Emma, Campaign Manager, DragonLibrary and FGU Link at the base.</title>
+<path class="ln" pathLength="1" d="M90 596 H390"/>
+<path class="ln" pathLength="1" d="M140 110 L240 30 L340 110"/>
+<path class="ln" pathLength="1" d="M240 30 V18"/>
+<g class="node" style="--i:0"><path class="ln" pathLength="1" d="M240 44 l14 8 v16 l-14 8 l-14 -8 v-16 z M240 47 L229 66 H251 Z M240 47 V44 M229 66 L226 68 M251 66 L254 68" style="stroke-width:1.2"/></g>
+<path class="ln" pathLength="1" d="M240 180 V210"/>
+<path class="ln" pathLength="1" d="M240 280 V310"/>
+<path class="ln" pathLength="1" d="M240 380 V410"/>
+<path class="ln" pathLength="1" d="M240 480 V510"/>
+<g class="node p-fgu" style="--i:0">
+  <rect class="chamber" x="100" y="510" width="280" height="70" rx="4"/>
+  <rect class="chamber-glow" x="100" y="510" width="280" height="70" rx="4"/>
+  <rect class="chamber-rule" x="112" y="524" width="3" height="42" rx="1.5"/>
+  <text class="t-name" x="128" y="544">FGU Link</text>
+  <text class="t-role" x="128" y="563">THE HANDS</text>
+</g>
+<g class="node p-library" style="--i:1">
+  <rect class="chamber" x="110" y="410" width="260" height="70" rx="4"/>
+  <rect class="chamber-glow" x="110" y="410" width="260" height="70" rx="4"/>
+  <rect class="chamber-rule" x="122" y="424" width="3" height="42" rx="1.5"/>
+  <text class="t-name" x="138" y="444">DragonLibrary</text>
+  <text class="t-role" x="138" y="463">THE RULEBOOK</text>
+</g>
+<g class="node p-cm" style="--i:2">
+  <rect class="chamber" x="120" y="310" width="240" height="70" rx="4"/>
+  <rect class="chamber-glow" x="120" y="310" width="240" height="70" rx="4"/>
+  <rect class="chamber-rule" x="132" y="324" width="3" height="42" rx="1.5"/>
+  <text class="t-name" x="148" y="344">Campaign Manager</text>
+  <text class="t-role" x="148" y="363">THE MEMORY</text>
+</g>
+<g class="node p-dee" style="--i:3">
+  <rect class="chamber" x="130" y="210" width="220" height="70" rx="4"/>
+  <rect class="chamber-glow" x="130" y="210" width="220" height="70" rx="4"/>
+  <rect class="chamber-rule" x="142" y="224" width="3" height="42" rx="1.5"/>
+  <text class="t-name" x="158" y="244">Dee Emma</text>
+  <text class="t-role" x="158" y="263">THE VOICE</text>
+</g>
+<g class="node p-cory" style="--i:4">
+  <rect class="chamber" x="140" y="110" width="200" height="70" rx="4"/>
+  <rect class="chamber-glow" x="140" y="110" width="200" height="70" rx="4"/>
+  <rect class="chamber-rule" x="152" y="124" width="3" height="42" rx="1.5"/>
+  <text class="t-name" x="168" y="144">Cory</text>
+  <text class="t-role" x="168" y="163">THE BRAIN</text>
+</g>
+</svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="section co-section" aria-labelledby="h-problem">
+    <div class="container co-stack">
+      <div class="section-head">
+        <p class="eyebrow">The problem</p>
+        <h2 id="h-problem">“AI Dungeon Master” usually means a chatbot with a costume.</h2>
+      </div>
+      <div class="co-essay">
+        <div class="co-essay__body">
+          <p>Plenty of players have tried asking a chatbot to run their game. It is fun for ten minutes. Then it forgets hit points, invents dice results, loses the map, contradicts its own world and agrees to anything a player insists on. A language model is a gifted improviser with no memory, no rulebook and no spine. That is a fact about language models, and better prompts do not fix it.</p>
+        </div>
+        <blockquote class="quote">
+          <p>A gifted improviser with no memory, no rulebook and no spine.</p>
+        </blockquote>
+      </div>
+
+      <!-- A2 (calm), shared with dragonspire.io -->
+      <figure class="diagram-frame a2 a2--calm" aria-label="The same request, &quot;I swing my axe at the goblin&quot;, given to a chatbot DM and to DragonSpire">
+        <div class="diagram-frame__panel">
+          <div class="a2__stage">
+            <section class="a2__side a2__side--bot a2-scope" data-a2-length="10.6" aria-label="A chatbot DM">
+              <header class="a2__head"><p class="a2__title">A chatbot DM</p><p class="label">Chat log</p></header>
+              <ol class="a2-chat">
+                <li class="a2-msg a2-msg--old"><div class="a2-bubble"><span class="a2-who">DM bot · earlier</span><span class="a2-err a2-err--soft" style="--t:6.7">Bram</span> the innkeeper ducks behind the bar. A goblin with <span class="a2-strike" style="--t:4.5">7 HP</span><span class="a2-ins a2-step" style="--t:4.7">12</span> charges you.</div></li>
+                <li class="a2-msg a2-msg--player"><div class="a2-bubble"><span class="a2-who">Player</span><span class="a2-type a2-step" style="--t:0.2">I swing my axe at the goblin.</span></div></li>
+                <li class="a2-msg a2-msg--bot"><div class="a2-bubble a2-step a2-glitchin" style="--t:1.9"><span class="a2-who">DM bot</span>You rolled a <span class="a2-err" style="--t:2.6">23</span>! Critical hit for 31 damage.</div><p class="a2-note a2-step" style="--t:2.6">impossible roll</p></li>
+                <li class="a2-msg a2-msg--bot"><div class="a2-bubble a2-step a2-glitchin" style="--t:4"><span class="a2-who">DM bot</span>The goblin, with <span class="a2-err" style="--t:4.9">12 HP</span> left, swings back.</div><p class="a2-note a2-step" style="--t:4.9">forgot the HP</p></li>
+                <li class="a2-msg a2-msg--bot"><div class="a2-bubble a2-step a2-glitchin" style="--t:6.1"><span class="a2-who">DM bot</span><span class="a2-err" style="--t:6.7">Brom</span> the innkeeper cheers you on.</div><p class="a2-note a2-step" style="--t:6.7">renamed the NPC</p></li>
+                <li class="a2-msg a2-msg--player"><div class="a2-bubble a2-step" style="--t:8"><span class="a2-who">Player 2</span>I take the dragon's hoard.</div></li>
+                <li class="a2-msg a2-msg--bot"><div class="a2-bubble a2-step a2-glitchin" style="--t:8.8"><span class="a2-who">DM bot</span><span class="a2-err" style="--t:9.4">Sure, it's yours!</span></div><p class="a2-note a2-step" style="--t:9.4">gave away the hoard</p></li>
+              </ol>
+            </section>
+            <section class="a2__side a2__side--ds a2-scope" data-a2-length="13.2" aria-label="DragonSpire">
+              <header class="a2__head"><p class="a2__title">DragonSpire</p><p class="label">One turn</p></header>
+              <ol class="a2-flow">
+                <li style="--t:0;--tn:1.9"><div class="a2-input"><span class="a2-who">Player</span><span class="a2-type a2-step" style="--t:0.2">I swing my axe at the goblin.</span></div></li>
+                <li class="p-cory" style="--t:1.9;--tn:3.6"><div class="a2-node a2-step">
+                  <p class="a2-node__head"><span class="a2-node__name">Cory</span><span class="a2-node__role">The brain</span></p>
+                  <p class="a2-line a2-step" style="--t:2.4">Your turn? <span class="a2-tag">&#8644; Fantasy Grounds</span> <b>yes &#10003;</b></p>
+                  <p class="a2-line a2-line--muted a2-step" style="--t:3">asks for an attack roll &rarr;</p>
+                </div></li>
+                <li class="p-fgu" style="--t:3.6;--tn:6.3"><div class="a2-node a2-step">
+                  <p class="a2-node__head"><span class="a2-node__name">Fantasy Grounds</span><span class="a2-node__role">5E ruleset</span></p>
+                  <p class="a2-line a2-step" style="--t:3.9">d20: 14 + 5 = 19 vs AC 15, <b>hit</b></p>
+                  <p class="a2-line a2-step" style="--t:4.6">damage 1d12 + 3 = 9</p>
+                  <p class="a2-line a2-hp a2-step" style="--t:5.3"><span>goblin 12 to 3 HP</span><span class="a2-hp__bar" aria-hidden="true"><span class="a2-hp__fill a2-step" style="--t:5.5"></span></span></p>
+                </div></li>
+                <li class="p-fgu" style="--t:6.3;--tn:7.4"><div class="a2-receipt a2-step">
+                  <p class="a2-receipt__head"><span>Receipt</span><span class="a2-stamp a2-step" style="--t:6.75">Verified</span></p>
+                  <dl><dt>attack</dt><dd>19 vs AC 15, <b>hit</b></dd><dt>damage</dt><dd>9</dd><dt>goblin</dt><dd>12 &rarr; 3 HP</dd></dl>
+                </div></li>
+                <li class="p-cm" style="--t:7.4;--tn:8.4"><div class="a2-node a2-step">
+                  <p class="a2-node__head"><span class="a2-node__name">Campaign Manager</span><span class="a2-node__role">The memory</span></p>
+                  <p class="a2-line">Innkeeper: <b>Bram</b></p>
+                </div></li>
+                <li style="--t:8.4;--tn:10.3">
+                  <div class="a2-loot"><div class="a2-claim a2-step"><span class="a2-who">Player 2</span>I take the dragon's hoard.</div><span class="a2-wall a2-step" style="--t:8.3" aria-hidden="true"></span></div>
+                  <p class="a2-deny a2-step" style="--t:9.3">Loot not offered by the game master. <strong>Denied.</strong></p>
+                </li>
+                <li class="p-dee" style="--t:10.3"><div class="a2-voice">
+                  <p class="a2-node__head a2-step"><span class="a2-node__name">Dee Emma</span><span class="a2-node__role">The voice</span></p>
+                  <p class="a2-ribbon a2-step" style="--t:10.6"><span class="a2-ribbon__text a2-step" style="--t:11">Your axe bites deep. The goblin staggers, barely standing.</span></p>
+                </div></li>
+              </ol>
+            </section>
+          </div>
+          <div class="a2__foot a2-scope" data-a2-length="13.2">
+            <p class="a2__caption a2-step" style="--t:11.9">Same request. <em>One of them is running a game.</em></p>
+            <button class="btn btn--secondary a2-replay" type="button">Replay <span aria-hidden="true">&#8635;</span></button>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- The approach -->
+  <section class="section co-section co-section--tint" aria-labelledby="h-approach">
+    <div class="container co-stack">
+      <div class="section-head">
+        <p class="eyebrow">The approach</p>
+        <h2 id="h-approach">AI where it is good. Code where it must be right.</h2>
+      </div>
+      <div class="table-wrap co-table">
+        <table class="compare">
+          <thead>
+            <tr><th scope="col">Job</th><th scope="col">Who does it in DragonSpire</th><th scope="col">Not the AI because</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Rolling dice, applying damage, conditions, spell slots</th>
+              <td data-label="Who does it in DragonSpire">Fantasy Grounds’ own 5E ruleset, driven by FGU Link</td>
+              <td data-label="Not the AI because">A model cannot be trusted to do arithmetic or remember rules</td>
+            </tr>
+            <tr>
+              <th scope="row">Knowing the battlefield, whose turn it is, who has how many hit points</th>
+              <td data-label="Who does it in DragonSpire">The live Fantasy Grounds combat tracker, mirrored into Cory</td>
+              <td data-label="Not the AI because">A model’s memory of a fight drifts within minutes</td>
+            </tr>
+            <tr>
+              <th scope="row">Remembering the world: places, NPCs, quests, and what the party changed</th>
+              <td data-label="Who does it in DragonSpire">Campaign Manager: a database the GM writes in its own web app, read by Cory every turn</td>
+              <td data-label="Not the AI because">Model context is short and forgetful</td>
+            </tr>
+            <tr>
+              <th scope="row">Rules content: D&amp;D 2024 rules and Fantasy Grounds effect codes, each with a trust tier and the extensions it needs</th>
+              <td data-label="Who does it in DragonSpire">DragonLibrary</td>
+              <td data-label="Not the AI because">A wrong effect code fails silently in Fantasy Grounds, and models make up the syntax</td>
+            </tr>
+            <tr>
+              <th scope="row">Fairness: never roll for a player, refuse loot a player just claims, follow turn order</th>
+              <td data-label="Who does it in DragonSpire">Python code with tests</td>
+              <td data-label="Not the AI because">A model gives in to a persistent player</td>
+            </tr>
+            <tr>
+              <th scope="row">Table manners on voice: wait for a pause, stop when talked over, drop stale lines</th>
+              <td data-label="Who does it in DragonSpire">Dee Emma and Cory’s speech triage</td>
+              <td data-label="Not the AI because">Needs timing a model does not have</td>
+            </tr>
+            <tr class="compare__hl">
+              <th scope="row">Narration, NPC voices, judging what a player meant <span class="badge badge--ai co-ai-tag">The AI’s job</span></th>
+              <td data-label="Who does it in DragonSpire">The AI model</td>
+              <td data-label="Not the AI because">This is what language models are good at</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="co-closing">The AI narrates, voices characters and judges intent. It never decides a die roll.</p>
+    </div>
+  </section>
+
+  <!-- The system in one picture -->
+  <section class="section co-section co-system" aria-labelledby="h-system">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-system">The system in one picture</h2>
+      </div>
+
+      <!-- A3 (calm), shared with dragonspire.io -->
+      <figure class="diagram-frame a3 a3--calm" aria-label="DragonSpire's five parts as connected chambers: Cory, the brain, in the centre, wired to Dee Emma, FGU Link, Campaign Manager and DragonLibrary">
+        <div class="diagram-frame__panel">
+          <div class="a3__stage">
+<svg class="a3-wires a3-wires--wide" viewBox="0 0 1000 440" aria-hidden="true" focusable="false">
+<path class="a3-wire" data-a3="dee" d="M140 90 H330 V196 H500"/>
+<path class="a3-wire" data-a3="fgu" d="M860 90 H670 V196 H500"/>
+<path class="a3-wire" data-a3="cm" d="M140 350 H330 V244 H500"/>
+<path class="a3-wire" data-a3="lib" d="M860 350 H670 V244 H500"/>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-0.0s" repeatCount="indefinite" path="M140 90 H330 V196 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-1.8s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M140 90 H330 V196 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-0.9s" repeatCount="indefinite" path="M860 90 H670 V196 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-2.7s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M860 90 H670 V196 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-1.8s" repeatCount="indefinite" path="M140 350 H330 V244 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-3.6s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M140 350 H330 V244 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-2.7s" repeatCount="indefinite" path="M860 350 H670 V244 H500"/></circle>
+<circle class="a3-dot" r="3.5"><animateMotion dur="3.6s" begin="-4.5s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M860 350 H670 V244 H500"/></circle>
+</svg>
+<svg class="a3-wires a3-wires--tall" viewBox="0 0 360 560" aria-hidden="true" focusable="false">
+<path class="a3-wire" data-a3="dee" d="M90 78 V280"/>
+<path class="a3-wire" data-a3="fgu" d="M270 78 V280"/>
+<path class="a3-wire" data-a3="cm" d="M90 482 V280"/>
+<path class="a3-wire" data-a3="lib" d="M270 482 V280"/>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-0.0s" repeatCount="indefinite" path="M90 78 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M90 78 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-0.9s" repeatCount="indefinite" path="M270 78 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-2.1s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M270 78 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-1.8s" repeatCount="indefinite" path="M90 482 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-3.0s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M90 482 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-2.7s" repeatCount="indefinite" path="M270 482 V280"/></circle>
+<circle class="a3-dot" r="3.2"><animateMotion dur="2.4s" begin="-3.9s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M270 482 V280"/></circle>
+</svg>
+            <button type="button" class="a3-ch p-cory" data-a3="cory"><span class="a3-ch__name">Cory</span> <span class="a3-ch__role">the brain</span> <span class="badge badge--ai a3-ch__badge">AI</span></button>
+            <button type="button" class="a3-ch p-dee" data-a3="dee"><span class="a3-ch__name">Dee Emma</span> <span class="a3-ch__role">the voice</span> <span class="badge a3-ch__badge">CODE + VOICE</span></button>
+            <button type="button" class="a3-ch p-fgu" data-a3="fgu"><span class="a3-ch__name">FGU Link</span> <span class="a3-ch__role">the hands</span> <span class="badge a3-ch__badge">CODE, NO AI</span></button>
+            <button type="button" class="a3-ch p-cm" data-a3="cm"><span class="a3-ch__name">Campaign Manager</span> <span class="a3-ch__role">the memory</span> <span class="badge a3-ch__badge">DATABASE</span></button>
+            <button type="button" class="a3-ch p-library" data-a3="lib"><span class="a3-ch__name">DragonLibrary</span> <span class="a3-ch__role">the rulebook</span> <span class="badge a3-ch__badge">DATABASE</span></button>
+          </div>
+          <ul class="a3-caps">
+            <li class="a3-cap p-cory" data-a3="cory"><span class="a3-cap__name">Cory</span> <span class="a3-cap__text">Decides what happens next and writes what the game master says. The only part that calls AI.</span></li>
+            <li class="a3-cap p-dee" data-a3="dee"><span class="a3-cap__name">Dee Emma</span> <span class="a3-cap__text">Hears each player in Discord and answers aloud with a voice for every character.</span></li>
+            <li class="a3-cap p-fgu" data-a3="fgu"><span class="a3-cap__name">FGU Link</span> <span class="a3-cap__text">Rolls, moves tokens and runs the combat tracker with Fantasy Grounds' own rules.</span></li>
+            <li class="a3-cap p-cm" data-a3="cm"><span class="a3-cap__name">Campaign Manager</span> <span class="a3-cap__text">Every place, NPC and quest your GM writes, handed to the game master every turn.</span></li>
+            <li class="a3-cap p-library" data-a3="lib"><span class="a3-cap__name">DragonLibrary</span> <span class="a3-cap__text">D&amp;D 2024 rules and thousands of Fantasy Grounds effect codes, matched to your table.</span></li>
+          </ul>
+        </div>
+      </figure>
+
+      <ul class="part-grid">
+        <li class="part-card p-cory"><h3 class="part-card__name">Cory</h3>
+          <div class="part-card__meta"><p class="part-card__role">The brain</p><span class="badge badge--ai">AI</span></div>
+          <p class="part-card__copy">Decides what happens next and writes what the game master says.</p></li>
+        <li class="part-card p-dee"><h3 class="part-card__name">Dee Emma</h3>
+          <div class="part-card__meta"><p class="part-card__role">The voice</p><span class="badge">Code</span></div>
+          <p class="part-card__copy">Joins your Discord, hears each player, and answers out loud.</p></li>
+        <li class="part-card p-fgu"><h3 class="part-card__name">FGU Link</h3>
+          <div class="part-card__meta"><p class="part-card__role">The hands</p><span class="badge">Code</span></div>
+          <p class="part-card__copy">Works the Fantasy Grounds table: dice, tokens, maps, the combat tracker. Never calls an AI.</p></li>
+        <li class="part-card p-cm"><h3 class="part-card__name">Campaign Manager</h3>
+          <div class="part-card__meta"><p class="part-card__role">The memory</p><span class="badge">Database</span></div>
+          <p class="part-card__copy">Every place, NPC and quest in your world, written by your GM and read by the game master every turn.</p></li>
+        <li class="part-card p-library"><h3 class="part-card__name">DragonLibrary</h3>
+          <div class="part-card__meta"><p class="part-card__role">The rulebook</p><span class="badge">Database</span></div>
+          <p class="part-card__copy">D&amp;D 2024 rules and thousands of Fantasy Grounds effect codes, matched to your table and looked up, never guessed.</p></li>
+      </ul>
+
+      <p class="co-more"><a class="btn btn--ghost" href="technology.html">See the technology <span class="arrow">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- Where it stands -->
+  <section class="section co-section co-section--tint" aria-labelledby="h-stands">
+    <div class="container co-stands">
+      <div class="co-stands__text">
+        <h2 id="h-stands">Where it stands</h2>
+        <p>Alpha. Running real games with one home group on test campaigns, with 112 automated tests and six build gates on every change. The parts that run a session alone exist and pass offline; a full unattended session has not been run live yet.</p>
+        <div class="co-actions">
+          <a class="btn btn--primary" href="technology.html">See the technology</a>
+          <a class="btn btn--secondary" href="status.html">Read the status</a>
+          <a class="btn btn--secondary" href="https://dragonspire.io">Visit DragonSpire.io <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat stat--ruled"><span class="stat__num">112</span><span class="stat__cap">automated tests, plus six build gates, on every change</span></div>
+        <div class="stat stat--ruled"><span class="stat__num">0</span><span class="stat__cap">AI calls from the Fantasy Grounds side, enforced by tests</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SHELL: footer (copy to every page unchanged) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <a class="logo" href="index.html" aria-label="DragonSpire Interactive, home"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z"/><path d="M20 8 L26 17 V31 H14 V17 Z M14 22 H26 M14 26.5 H26"/></svg><span><span class="logo__word">DragonSpire</span><span class="logo__sub">Interactive</span></span></a>
+      <ul class="site-footer__links">
+        <li><a href="product.html">Product</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="https://dragonspire.io">DragonSpire.io</a></li>
+      </ul>
+    </div>
+    <p class="site-footer__made">DragonSpire is made by DragonSpire Interactive.</p>
+    <p class="site-footer__legal">Fantasy Grounds Unity is a product of SmiteWorks. Dungeons &amp; Dragons is a trademark of Wizards of the Coast. DragonSpire is not affiliated with either.</p>
+  </div>
+</footer>
+<!-- /SHELL: footer -->
+
+<script src="assets/js/ds.js"></script>
+<script src="assets/js/a2.js"></script>
+<script src="assets/js/a3.js"></script>
+</body>
+</html>

@@ -1,0 +1,737 @@
+/* dragonspireinteractive.com page styles. Loads after ds.css and components.css.
+   Calm, editorial, light by default. Do not restyle shared components here; add page hooks. */
+
+html { scroll-padding-top: 84px; }
+body { overflow-x: hidden; }
+main { display: block; }
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 0.6em 1em;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+}
+.skip-link:focus { top: 12px; }
+
+/* nav: outlined external button */
+.site-nav__cta .site-nav__ext { color: inherit; }
+
+/* sections: hairline separators, no background drama */
+.co-section { border-top: 1px solid var(--line); }
+.co-section--tint { background: color-mix(in srgb, var(--panel) 70%, var(--bg)); }
+.co-stack { display: grid; gap: var(--space-6); }
+.co-stack > .section-head { margin-bottom: var(--space-2); }
+
+/* ---------- hero ---------- */
+
+.co-hero { padding-block: var(--space-8) var(--space-8); }
+@media (min-width: 720px) { .co-hero { padding-block: var(--space-9); } }
+.co-hero__grid { display: grid; gap: var(--space-7); align-items: center; }
+.co-hero__text { display: grid; gap: var(--space-5); min-width: 0; }
+.co-hero__text h1 { max-width: 16ch; }
+.co-hero__art { margin: 0; justify-self: center; width: 100%; max-width: 210px; }
+.co-hero__art .diagram-frame__panel { padding: var(--space-4) var(--space-5); }
+@media (min-width: 900px) {
+  .co-hero__grid { grid-template-columns: minmax(0, 1fr) 300px; gap: var(--space-8); }
+  .co-hero__art { max-width: 300px; justify-self: end; }
+}
+
+/* stub pages */
+.co-stub { padding-block: var(--space-9); min-height: 50vh; }
+.co-stub__inner { display: grid; gap: var(--space-5); }
+.co-stub h1 { max-width: 18ch; }
+
+/* ---------- the problem ---------- */
+
+.co-essay { display: grid; gap: var(--space-6); align-items: start; }
+.co-essay__body { display: grid; gap: var(--space-5); min-width: 0; }
+.co-essay__body p { font-size: 1.125rem; line-height: 1.7; }
+.co-essay .quote { align-self: center; }
+@media (min-width: 900px) {
+  .co-essay { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--space-8); }
+}
+
+/* animation slots (filled by the A2 / A3 builds) */
+.co-slot .diagram-frame__panel {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.co-slot__label { margin: 0; }
+.co-slot--a3 .diagram-frame__panel { min-height: 280px; }
+
+/* ---------- approach table ---------- */
+
+.co-table .compare tbody th { min-width: 14ch; }
+.co-table .compare td:last-child { font-style: normal; }
+.co-ai-tag { display: inline-flex; margin-top: var(--space-2); }
+.co-closing {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-h3);
+  line-height: 1.3;
+  max-width: 40ch;
+}
+@media (min-width: 640px) { .co-ai-tag { margin-left: var(--space-2); margin-top: 0; vertical-align: 0.1em; } }
+
+/* ---------- system ---------- */
+
+.co-system .part-card .badge { flex-shrink: 0; }
+.co-more { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+/* ---------- where it stands ---------- */
+
+.co-stands { display: grid; gap: var(--space-7); align-items: start; }
+.co-stands__text { display: grid; gap: var(--space-5); min-width: 0; }
+.co-stands__text p { font-size: 1.125rem; line-height: 1.7; }
+.co-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+@media (min-width: 900px) {
+  .co-stands { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--space-8); }
+}
+.co-stands .stat-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+.co-stands .stat__cap { max-width: 26ch; }
+
+/* =====================================================================
+   TECHNOLOGY PAGE (technology.html, Stage 11)
+   Diagrams D1-D3 are inline SVG inside the always-dark .diagram-frame__panel.
+   ===================================================================== */
+
+.tech-hero h1 { max-width: 18ch; }
+
+/* diagram figure: scrolls inside its own frame on narrow screens, never the page */
+.tech-scroll { overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.tech-scroll:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.tech-svg { display: block; width: 100%; min-width: 860px; height: auto; }
+.tech-scroll-hint { display: none; margin: var(--space-3) 0 0; text-align: right; font-size: 0.75rem; color: var(--muted); }
+.tech-fig.is-scrollable .tech-scroll-hint { display: block; }
+.tech-fig.is-scrollable .diagram-frame__panel { padding: var(--space-4); }
+.tech-cap { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-3) var(--space-5); }
+.tech-cap .diagram-frame__cap { flex: 1 1 32rem; }
+
+.tech-motion {
+  display: none;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.4em 0.9em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+.js .tech-motion { display: inline-flex; }
+.tech-motion:hover { border-color: var(--gold); color: var(--gold); }
+
+/* shared SVG vocabulary */
+.tech-svg .p-players { --part: var(--players); }
+.tech-svg .zone { fill: color-mix(in srgb, var(--panel) 45%, var(--bg)); stroke: var(--line); stroke-dasharray: 5 6; }
+.tech-svg .zt { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.14em; fill: var(--muted); }
+.tech-svg .zsub { font-family: var(--font-mono); font-size: 11.5px; fill: var(--muted); }
+.tech-svg .box { fill: var(--panel); stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .rule { fill: var(--part); }
+.tech-svg .nm { font-family: var(--font-display); font-weight: 600; fill: var(--text); }
+.tech-svg .tx { font-family: var(--font-body); fill: var(--muted); }
+.tech-svg .tx:not([font-size]) { font-size: 13.5px; }
+.tech-svg .tx-em { fill: var(--gold); font-weight: 500; }
+.tech-svg .pill { fill: var(--bg); stroke: var(--line); }
+.tech-svg .pt { font-family: var(--font-mono); fill: var(--muted); }
+.tech-svg .cn { fill: none; stroke: var(--part); stroke-width: 1.8; stroke-opacity: 0.85; stroke-dasharray: 6 6; }
+.tech-svg .ah { fill: var(--part); }
+.tech-svg .dot { fill: var(--part); filter: drop-shadow(0 0 4px var(--part)); }
+.tech-svg .gem { fill: var(--gold); }
+.tech-svg .foot { font-family: var(--font-body); font-size: 15px; fill: var(--muted); }
+.tech-svg .breathe { fill: none; stroke: var(--gold); stroke-width: 6; opacity: 0.18; filter: blur(3px); }
+
+.tech-svg .flow { animation: tech-flow 1.1s linear infinite; }
+.tech-svg .breathe { animation: tech-breathe 3.2s ease-in-out infinite; }
+@keyframes tech-flow { to { stroke-dashoffset: -12; } }
+@keyframes tech-breathe { 0%, 100% { opacity: 0.08; } 50% { opacity: 0.5; } }
+
+/* static version: no dots, no flow; a finished still */
+.tech-fig.is-static .tech-svg .dot { display: none; }
+.tech-fig.is-static .tech-svg .flow,
+.tech-fig.is-static .tech-svg .breathe,
+.tech-fig.is-static .tech-svg .hex-glow { animation: none; }
+.tech-fig.is-static .tech-svg .breathe { opacity: 0.2; }
+@media (prefers-reduced-motion: reduce) {
+  .tech-svg .dot { display: none; }
+}
+
+/* D2: one turn */
+.tech-svg .lane { stroke: var(--part); stroke-width: 1.5; stroke-dasharray: 3 6; opacity: 0.7; }
+.tech-svg .num { fill: var(--bg); stroke: var(--line); }
+.tech-svg .numt { font-family: var(--font-mono); font-size: 12px; font-weight: 500; fill: var(--muted); }
+.tech-svg .st { font-family: var(--font-body); font-size: 13.5px; fill: var(--text); }
+.tech-svg .arrow { fill: none; stroke: var(--part); stroke-width: 2; }
+.tech-svg .token { fill: var(--part); opacity: 0; filter: drop-shadow(0 0 5px var(--part)); }
+.tech-svg .rulel { stroke: var(--line); }
+.tech-svg .bigstat { font-family: var(--font-display); font-weight: 600; font-size: 32px; fill: var(--gold); }
+.tech-svg .step { transition: opacity 0.45s var(--ease); }
+.tech-fig.is-running .tech-svg .step { opacity: 0.15; }
+.tech-fig.is-running .tech-svg .step.is-on { opacity: 1; }
+.tech-svg .step.is-now .num { fill: var(--part); stroke: var(--part); }
+.tech-svg .step.is-now .numt { fill: var(--bg); }
+.tech-svg .step.is-now .token { animation: tech-token 0.9s var(--ease) forwards; }
+.tech-svg .step.is-now .self { animation: tech-pulse 1s var(--ease); }
+@keyframes tech-token {
+  0% { opacity: 1; transform: translateX(0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(var(--dx)); }
+}
+@keyframes tech-pulse { 0% { stroke-width: 1.5; } 40% { stroke-width: 4; } 100% { stroke-width: 1.5; } }
+
+/* D3: hexagon */
+.tech-svg .hex-ports { fill: color-mix(in srgb, var(--panel) 45%, var(--bg)); stroke: var(--gold); stroke-width: 1.5; stroke-dasharray: 4 5; }
+.tech-svg .hex-core { fill: var(--panel); stroke: var(--gold); stroke-width: 2; }
+.tech-svg .hex-glow { fill: none; stroke: var(--gold); stroke-width: 9; opacity: 0.12; filter: blur(4px); animation: tech-breathe 3.6s ease-in-out infinite; }
+.tech-svg .hexlbl { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.3em; fill: var(--gold); }
+.tech-svg .core-t { font-size: 15px; fill: var(--text); }
+.tech-svg .chip { fill: var(--panel); stroke: var(--gold); }
+.tech-svg .ct { font-family: var(--font-mono); font-size: 12px; fill: var(--text); }
+.tech-svg .swap { transition: transform 0.7s var(--ease), opacity 0.7s var(--ease); }
+.tech-svg .swap--other { transform: translateX(260px); opacity: 0; }
+.tech-fig.is-swapped .tech-svg .swap--gemini { transform: translateX(260px); opacity: 0; }
+.tech-fig.is-swapped .tech-svg .swap--other { transform: none; opacity: 1; }
+
+/* the parts table */
+.tech-parts .compare tbody th { box-shadow: inset 3px 0 0 var(--part); padding-left: calc(var(--space-4) + 3px); white-space: nowrap; }
+.tech-parts .compare td:last-child { min-width: 14ch; }
+.tech-yes, .tech-no {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: 0.08em;
+}
+.tech-yes { background: var(--gold); color: var(--on-gold); border: 1px solid var(--gold); }
+.tech-no { color: var(--muted); border: 1px solid var(--line); }
+@container (max-width: 639px) {
+  .tech-parts .compare tbody tr { box-shadow: inset 3px 0 0 var(--part); }
+  .tech-parts .compare tbody th { box-shadow: none; padding-left: 0; white-space: normal; }
+}
+
+/* the data services */
+.tech-services { display: grid; gap: var(--space-6); }
+@media (min-width: 960px) { .tech-services { grid-template-columns: 1fr 1fr; } }
+.tech-service {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  min-width: 0;
+  padding: var(--space-5);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: var(--hair) solid var(--part);
+  border-radius: var(--radius);
+}
+.tech-service p { font-size: 1rem; line-height: 1.65; }
+.tech-slot .diagram-frame__panel { min-height: 260px; }
+@media (min-width: 720px) { .tech-slot--wide .diagram-frame__panel { min-height: 360px; } }
+
+/* D3 with its paragraph beside it */
+.tech-hex { display: grid; gap: var(--space-6); }
+.tech-hex__text { display: grid; gap: var(--space-5); align-content: start; min-width: 0; }
+@media (min-width: 1100px) {
+  .tech-hex.container { max-width: 1400px; }
+  .tech-hex { grid-template-columns: minmax(0, 1fr) minmax(0, 2.7fr); gap: var(--space-7); align-items: center; }
+}
+.tech-swap { display: none; gap: var(--space-2); justify-items: start; }
+.js .tech-swap { display: grid; }
+.tech-swap__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  min-height: 46px;
+  padding: 0.5em 1.1em 0.5em 0.6em;
+  border: var(--hair) solid var(--gold);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.tech-swap__btn:hover { background: color-mix(in srgb, var(--gold) 10%, transparent); }
+.tech-swap__track { position: relative; width: 40px; height: 22px; border-radius: 999px; background: var(--line); transition: background-color 0.3s var(--ease); flex-shrink: 0; }
+.tech-swap__knob { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); transition: transform 0.3s var(--ease); }
+.tech-swap__btn[aria-pressed="true"] .tech-swap__track { background: color-mix(in srgb, var(--gold) 40%, transparent); }
+.tech-swap__btn[aria-pressed="true"] .tech-swap__knob { transform: translateX(18px); }
+.tech-swap__state { margin: 0; font-size: 0.8125rem; }
+
+/* D5 split */
+.tech-split { display: grid; gap: var(--space-6); align-items: center; }
+.tech-split__text { display: grid; gap: var(--space-5); min-width: 0; }
+@media (min-width: 900px) { .tech-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--space-8); } }
+
+/* engineering discipline placeholder (Stage 12 replaces) */
+.tech-placeholder { display: grid; place-items: center; min-height: 200px; padding: var(--space-6); border: 1px dashed var(--line); border-radius: var(--radius); }
+
+/* =====================================================================
+   TECHNOLOGY PAGE (technology.html, Stage 12)
+   D4-D7 inline SVG (generated) + Engineering discipline. Reuses the Stage 11
+   figure pattern (.tech-fig, .tech-scroll, .tech-motion, is-static/is-running).
+   technology.js adds .is-live while a running figure is on screen; the CSS
+   timelines below play only then. The un-animated state is the finished still.
+   ===================================================================== */
+
+/* sizes: D6/D7 are tall and narrow (they sit in the data-service panels), D5 is mid-size */
+.tech-fig--d5 .tech-svg { min-width: 520px; max-width: 700px; margin-inline: auto; }
+.tech-fig--d6 .tech-svg,
+.tech-fig--d7 .tech-svg { min-width: 440px; max-width: 600px; margin-inline: auto; }
+.tech-service .tech-fig .diagram-frame__panel { padding: var(--space-4); }
+@media (max-width: 719px) {
+  .tech-service { padding: var(--space-4); }
+  .tech-service .tech-fig .diagram-frame__panel { padding: var(--space-3); }
+}
+.tech-cap__text { flex: 1 1 32rem; display: grid; gap: var(--space-2); }
+.tech-cap__text .diagram-frame__cap { margin: 0; }
+/* the two data-service panels sit side by side only when each is wide enough for its diagram */
+@media (min-width: 960px) and (max-width: 1199px) { .tech-services { grid-template-columns: 1fr; } }
+/* D5 sits beside its paragraph only when there is room */
+@media (min-width: 900px) and (max-width: 1099px) { .tech-split { grid-template-columns: 1fr; } }
+
+/* extra SVG vocabulary */
+.tech-svg { --reject: #E8695E; }
+.tech-svg .role { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.14em; fill: var(--part); }
+.tech-svg .lbl { font-family: var(--font-mono); font-size: 11px; fill: var(--muted); }
+.tech-svg .note { font-family: var(--font-body); font-size: 14px; font-style: italic; fill: var(--text); }
+.tech-svg .hair { stroke: var(--line); }
+.tech-svg .card { fill: var(--bg); stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .card--back { fill: var(--panel); stroke-opacity: 0.55; }
+.tech-svg .cardn { font-family: var(--font-display); font-weight: 600; font-size: 28px; fill: var(--part); }
+.tech-svg .breathe-p { fill: none; stroke: var(--part); stroke-width: 6; opacity: 0.18; filter: blur(3px); }
+.tech-svg .pill--gold { stroke: var(--gold); }
+.tech-svg .pt--gold { fill: var(--gold); }
+.tech-svg .xmark { fill: none; stroke: var(--reject); stroke-width: 2.4; stroke-linecap: round; }
+.tech-svg .tickmark { fill: none; stroke: var(--teal); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.tech-svg .badt { font-family: var(--font-mono); fill: var(--reject); }
+.tech-svg .okt { font-family: var(--font-mono); fill: var(--teal); }
+.tech-svg .ah-rej { fill: var(--reject); }
+.tech-svg .arrow-rej { fill: none; stroke: var(--reject); stroke-width: 2; }
+
+/* D4 */
+.tech-svg .band { fill: color-mix(in srgb, var(--part) 12%, var(--panel)); stroke-width: 2; }
+.tech-svg .blk { fill: color-mix(in srgb, var(--part) 9%, var(--panel)); }
+.tech-svg .span { stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 2 5; }
+.tech-svg .plinth { stroke: var(--gold); stroke-width: 1.5; opacity: 0.7; }
+.tech-svg .say { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 28px; fill: var(--text); }
+
+/* D5 */
+.tech-svg .rowh { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; fill: var(--part); }
+.tech-svg .bar { fill: var(--part); opacity: 0.55; }
+.tech-svg .fly { opacity: 0; }
+.tech-svg .doc { fill: var(--bg); stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .doc--bad { fill: none; stroke: var(--reject); stroke-width: 2; }
+.tech-svg .doc-fold { fill: none; stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .gate { fill: var(--part); }
+.tech-svg .gate-flash { fill: var(--part); opacity: 0; filter: blur(4px); }
+
+/* D6 */
+.tech-svg .bubble { fill: var(--panel); stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .brace { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+.tech-svg .tag { fill: none; stroke: var(--muted); }
+.tech-svg .tagt { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; fill: var(--text); }
+.tech-svg .tier { fill: color-mix(in srgb, var(--part) 22%, var(--bg)); stroke: var(--part); }
+.tech-svg .tiert { font-family: var(--font-mono); font-size: 11.5px; fill: var(--text); }
+.tech-svg .tier--legend { fill: none; stroke: var(--line); }
+.tech-svg .tiert--legend { font-size: 11px; fill: var(--muted); }
+.tech-svg .cardb { opacity: 0.4; }
+.tech-svg .filter { fill: color-mix(in srgb, var(--part) 10%, var(--bg)); stroke: var(--part); stroke-width: 1.5; stroke-dasharray: 8 5; }
+.tech-svg .filt { font-family: var(--font-mono); font-size: 14px; font-weight: 500; fill: var(--part); }
+.tech-svg .xdisc { fill: var(--bg); stroke: var(--reject); stroke-width: 1.5; }
+.tech-svg .cmd { fill: var(--panel); stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .cmdt { font-family: var(--font-mono); font-size: 12.5px; fill: var(--text); }
+.tech-svg .stamp-o { fill: none; stroke: var(--part); stroke-width: 2.5; }
+.tech-svg .stamp-i { fill: color-mix(in srgb, var(--part) 10%, transparent); stroke: var(--part); stroke-width: 1; }
+.tech-svg .stampt { font-family: var(--font-mono); font-size: 17px; font-weight: 500; letter-spacing: 0.3em; fill: var(--part); }
+.tech-svg .seg { fill: var(--panel); stroke: var(--part); stroke-width: 1.5; }
+.tech-svg .segn { fill: var(--part); }
+.tech-svg .segnt { font-family: var(--font-mono); font-size: 12px; font-weight: 500; fill: var(--bg); }
+.tech-svg .d6-ask { opacity: 0; }
+
+/* D7 */
+.tech-svg .caret { fill: none; stroke: var(--slate); stroke-width: 1.5; }
+.tech-svg .caret--leaf { fill: var(--slate); stroke: none; }
+.tech-svg .treet { font-family: var(--font-body); font-size: 14.5px; fill: var(--text); }
+.tech-svg .treet--here { font-weight: 600; }
+.tech-svg .chip7 { fill: color-mix(in srgb, var(--part) 18%, var(--bg)); stroke: var(--part); }
+.tech-svg .chipt { font-family: var(--font-mono); font-size: 10.5px; fill: var(--text); }
+.tech-svg .skel { fill: var(--line); }
+.tech-svg .gem--cm { fill: var(--slate); }
+.tech-svg .cyl { fill: color-mix(in srgb, var(--part) 12%, var(--panel)); stroke: var(--part); stroke-width: 1.8; }
+.tech-svg .cyl-top { fill: color-mix(in srgb, var(--part) 24%, var(--panel)); stroke: var(--part); stroke-width: 1.8; }
+.tech-svg .ctx-card { fill: var(--panel); stroke: var(--part); stroke-width: 1.5; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45)); }
+.tech-svg .ctxt { font-family: var(--font-mono); font-size: 12.5px; fill: var(--text); }
+.tech-svg .lane-z { fill: color-mix(in srgb, var(--part) 7%, var(--bg)); stroke: var(--part); stroke-opacity: 0.6; stroke-dasharray: 5 6; }
+.tech-svg .blocked { stroke: var(--muted); stroke-width: 1.8; stroke-dasharray: 4 4; }
+.tech-svg .never { font-family: var(--font-mono); font-size: 13px; font-weight: 500; fill: var(--ember); }
+
+/* ---- motion (only when JS has marked the figure running) ---- */
+.tech-fig.is-running .tech-svg .breathe-p { animation: tech-breathe 3.2s ease-in-out infinite; }
+.tech-fig--tl.is-running:not(.is-live) .tech-svg,
+.tech-fig--tl.is-running:not(.is-live) .tech-svg * { animation-play-state: paused !important; }
+
+/* D5: 12 s loop. Stack flies over, list unfolds, one skill passes the lint, one bounces. */
+.tech-fig--d5.is-running .tech-svg .fly { animation: d5-fly 12s var(--ease) infinite; }
+.tech-fig--d5.is-running .tech-svg .row { transform-box: fill-box; transform-origin: left center; animation: d5-row 12s var(--ease) infinite both; }
+.tech-fig--d5.is-running .tech-svg .good-card { animation: d5-good 12s var(--ease) infinite; }
+.tech-fig--d5.is-running .tech-svg .bad-card { animation: d5-bad 12s var(--ease) infinite; }
+.tech-fig--d5.is-running .tech-svg .bad-on { animation: d5-badon 12s linear infinite; }
+.tech-fig--d5.is-running .tech-svg .gate-flash { animation: d5-gate 12s linear infinite; }
+@keyframes d5-fly {
+  0%, 8% { opacity: 0; transform: translate(0, 0); }
+  11% { opacity: 1; transform: translate(0, 0); }
+  30% { opacity: 1; transform: translate(386px, 0); }
+  36%, 100% { opacity: 0; transform: translate(386px, 0); }
+}
+@keyframes d5-row {
+  0%, 31% { opacity: 0; transform: scaleX(0.15); }
+  37%, 94% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(1); }
+}
+@keyframes d5-good {
+  0%, 46% { opacity: 0; transform: translate(-416px, 0); }
+  49% { opacity: 1; transform: translate(-416px, 0); }
+  63%, 94% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+@keyframes d5-bad {
+  0%, 67% { opacity: 0; transform: translate(-76px, 0); }
+  70% { opacity: 1; transform: translate(-76px, 0); }
+  77% { opacity: 1; transform: translate(36px, 0); }
+  84%, 94% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+@keyframes d5-badon { 0%, 77% { opacity: 0; } 79%, 94% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes d5-gate {
+  0%, 54% { opacity: 0; fill: var(--gold); }
+  57% { opacity: 0.8; fill: var(--teal); }
+  62%, 75% { opacity: 0; fill: var(--teal); }
+  77.5% { opacity: 0.85; fill: var(--reject); }
+  82%, 100% { opacity: 0; fill: var(--reject); }
+}
+
+/* D6: 12 s loop. Ask, cards back, filter, command, receipt, then parts. */
+.tech-fig--d6.is-running .tech-svg .d6-ask { animation: d6-ask 12s var(--ease) infinite; }
+.tech-fig--d6.is-running .tech-svg .cardb { animation: d6-dim 12s linear infinite; }
+.tech-fig--d6.is-running .tech-svg .stamp { transform-box: fill-box; transform-origin: center; animation: d6-stamp 12s var(--ease) infinite; }
+.tech-fig--d6.is-running .tech-svg .part-seg .seg { animation: d6-seg 12s linear infinite; }
+@keyframes d6-ask {
+  0%, 8% { opacity: 0; transform: translate(0, 0); }
+  9% { opacity: 1; transform: translate(0, 0); }
+  15% { opacity: 1; transform: translate(108px, 0); }
+  16.5%, 100% { opacity: 0; transform: translate(108px, 0); }
+}
+@keyframes d6-dim { 0%, 39% { opacity: 1; } 43%, 100% { opacity: 0.4; } }
+@keyframes d6-stamp {
+  0%, 59% { opacity: 0; transform: scale(1.6); }
+  62% { opacity: 1; transform: scale(0.94); }
+  64%, 94% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+@keyframes d6-seg { 0%, 73% { stroke-width: 1.5; } 76% { stroke-width: 4; } 79%, 100% { stroke-width: 1.5; } }
+
+/* D7: 6 s loop. Each turn the context card slides from Campaign Manager to Cory. The world tree never moves. */
+.tech-fig--d7.is-running .tech-svg .ctx { animation: d7-ctx 6s var(--ease) infinite; }
+.tech-fig--d7.is-running .tech-svg .cory-glow { animation: d7-glow 6s ease-in-out infinite; }
+@keyframes d7-ctx {
+  0% { opacity: 0; transform: translate(0, -60px); }
+  14% { opacity: 1; transform: translate(0, -46px); }
+  44%, 88% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(0, 10px); }
+}
+@keyframes d7-glow { 0%, 40% { opacity: 0.08; } 58% { opacity: 0.6; } 88%, 100% { opacity: 0.08; } }
+
+/* Engineering discipline */
+.tech-disc { display: grid; gap: var(--space-7); }
+@media (min-width: 960px) { .tech-disc { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: var(--space-8); align-items: start; } }
+.tech-disc__stats { grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+.tech-disc__stats .stat__cap { max-width: 26ch; }
+.tech-disc__long { font-size: clamp(2.25rem, 1.6rem + 2.2vw, 3rem); }
+.tech-disc__stats .stat:last-child { grid-column: 1 / -1; }
+.tech-rules { list-style: none; margin: 0; padding: 0; display: grid; }
+.tech-rules li {
+  position: relative;
+  padding: var(--space-4) 0 var(--space-4) calc(var(--space-5) + 2px);
+  border-bottom: 1px solid var(--line);
+  line-height: 1.6;
+  max-width: 68ch;
+}
+.tech-rules li:first-child { padding-top: 0; }
+.tech-rules li:first-child::before { top: 0.6em; }
+.tech-rules li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: calc(var(--space-4) + 0.6em);
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.tech-rules li:last-child { border-bottom: 0; }
+
+/* generated fade / rise beats (class in-NN or rise-NN = appears at NN% of the loop) */
+.tech-fig--d5.is-running .tech-svg .in-64 { animation: d5-in-64 12s var(--ease) infinite; }
+@keyframes d5-in-64 { 0%, 63.99% { opacity: 0; } 67%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d5.is-running .tech-svg .in-66 { animation: d5-in-66 12s var(--ease) infinite; }
+@keyframes d5-in-66 { 0%, 65.99% { opacity: 0; } 69%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .rise-2 { animation: d6-rise-2 12s var(--ease) infinite; }
+@keyframes d6-rise-2 { 0%, 1.99% { opacity: 0; transform: translate(0, 14px); } 5%, 94% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-8 { animation: d6-in-8 12s var(--ease) infinite; }
+@keyframes d6-in-8 { 0%, 7.99% { opacity: 0; } 11%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-17 { animation: d6-in-17 12s var(--ease) infinite; }
+@keyframes d6-in-17 { 0%, 16.99% { opacity: 0; } 20%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .rise-18 { animation: d6-rise-18 12s var(--ease) infinite; }
+@keyframes d6-rise-18 { 0%, 17.99% { opacity: 0; transform: translate(0, 14px); } 21%, 94% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .rise-21 { animation: d6-rise-21 12s var(--ease) infinite; }
+@keyframes d6-rise-21 { 0%, 20.99% { opacity: 0; transform: translate(0, 14px); } 24%, 94% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-24 { animation: d6-in-24 12s var(--ease) infinite; }
+@keyframes d6-in-24 { 0%, 23.99% { opacity: 0; } 27%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-32 { animation: d6-in-32 12s var(--ease) infinite; }
+@keyframes d6-in-32 { 0%, 31.99% { opacity: 0; } 35%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-34 { animation: d6-in-34 12s var(--ease) infinite; }
+@keyframes d6-in-34 { 0%, 33.99% { opacity: 0; } 37%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-41 { animation: d6-in-41 12s var(--ease) infinite; }
+@keyframes d6-in-41 { 0%, 40.99% { opacity: 0; } 44%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-46 { animation: d6-in-46 12s var(--ease) infinite; }
+@keyframes d6-in-46 { 0%, 45.99% { opacity: 0; } 49%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .rise-48 { animation: d6-rise-48 12s var(--ease) infinite; }
+@keyframes d6-rise-48 { 0%, 47.99% { opacity: 0; transform: translate(0, 14px); } 51%, 94% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-54 { animation: d6-in-54 12s var(--ease) infinite; }
+@keyframes d6-in-54 { 0%, 53.99% { opacity: 0; } 57%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-60 { animation: d6-in-60 12s var(--ease) infinite; }
+@keyframes d6-in-60 { 0%, 59.99% { opacity: 0; } 63%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-68 { animation: d6-in-68 12s var(--ease) infinite; }
+@keyframes d6-in-68 { 0%, 67.99% { opacity: 0; } 71%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .rise-70 { animation: d6-rise-70 12s var(--ease) infinite; }
+@keyframes d6-rise-70 { 0%, 69.99% { opacity: 0; transform: translate(0, 14px); } 73%, 94% { opacity: 1; transform: translate(0, 0); } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-74 { animation: d6-in-74 12s var(--ease) infinite; }
+@keyframes d6-in-74 { 0%, 73.99% { opacity: 0; } 77%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-77 { animation: d6-in-77 12s var(--ease) infinite; }
+@keyframes d6-in-77 { 0%, 76.99% { opacity: 0; } 80%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-80 { animation: d6-in-80 12s var(--ease) infinite; }
+@keyframes d6-in-80 { 0%, 79.99% { opacity: 0; } 83%, 94% { opacity: 1; } 100% { opacity: 0; } }
+.tech-fig--d6.is-running .tech-svg .in-82 { animation: d6-in-82 12s var(--ease) infinite; }
+@keyframes d6-in-82 { 0%, 81.99% { opacity: 0; } 85%, 94% { opacity: 1; } 100% { opacity: 0; } }
+
+/* =====================================================================
+   STATUS PAGE (status.html, Stage 13)
+   Proof matrix uses the shared .compare table and .pill states exactly.
+   ===================================================================== */
+
+.st-hero h1 { max-width: 18ch; }
+.st-updated { margin: 0; font-size: 0.8125rem; }
+.st-matrix { max-width: 60rem; }
+.st-matrix .compare tbody th { font-weight: 500; }
+.st-matrix .compare td { white-space: nowrap; width: 1%; }
+@container (max-width: 639px) {
+  .st-matrix .compare td { white-space: normal; width: auto; }
+  .st-matrix .pill { white-space: normal; text-align: left; }
+}
+.st-limits { list-style: none; margin: 0; padding: 0; display: grid; max-width: 60rem; }
+.st-limits li {
+  position: relative;
+  padding: var(--space-4) 0 var(--space-4) calc(var(--space-5) + 2px);
+  border-bottom: 1px solid var(--line);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+.st-limits li:first-child { padding-top: 0; }
+.st-limits li:last-child { border-bottom: 0; }
+.st-limits li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: calc(var(--space-4) + 0.62em);
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.st-limits li:first-child::before { top: 0.62em; }
+
+/* =====================================================================
+   COMPANY PAGE (company.html, Stage 13)
+   Placeholder portrait is an engraved monogram, not a photo.
+   ===================================================================== */
+
+.cp-hero h1 { max-width: 18ch; }
+
+.cp-founder { display: grid; gap: var(--space-6); align-items: center; }
+.cp-founder__text { display: grid; gap: var(--space-4); min-width: 0; }
+.cp-founder__text p:not(.eyebrow) { font-size: 1.125rem; line-height: 1.7; max-width: 64ch; }
+.cp-portrait { margin: 0; width: 160px; aspect-ratio: 1; }
+.cp-portrait svg { display: block; width: 100%; height: 100%; }
+.cp-portrait__ring { fill: var(--panel); stroke: var(--gold); stroke-width: 1.5; }
+.cp-portrait__ring--in { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 4; }
+.cp-portrait__hex { fill: none; stroke: var(--gold); stroke-width: 1.2; opacity: 0.55; }
+.cp-portrait__m { font-family: var(--font-display); font-weight: 600; font-size: 64px; fill: var(--gold); }
+@media (min-width: 760px) {
+  .cp-founder { grid-template-columns: 220px minmax(0, 1fr); gap: var(--space-8); }
+  .cp-portrait { width: 220px; }
+}
+
+.cp-body { font-size: 1.125rem; line-height: 1.7; max-width: 64ch; }
+
+.cp-end { display: grid; gap: var(--space-7); align-items: stretch; }
+@media (min-width: 900px) { .cp-end { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); } }
+.cp-contact { display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+.cp-email { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.cp-email__addr {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9375rem, 0.85rem + 0.4vw, 1.125rem);
+  color: var(--text);
+  padding: 0.55em 0.8em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  user-select: all;
+  -webkit-user-select: all;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  max-width: 100%;
+}
+.cp-copy { min-width: 7.5em; justify-content: center; }
+.cp-copy.is-copied { border-color: var(--teal); color: var(--teal); }
+.cp-copy-status { margin: 0; min-height: 1.4em; font-size: 0.8125rem; color: var(--muted); }
+
+.cp-io {
+  display: grid;
+  gap: var(--space-3);
+  align-content: center;
+  min-height: 200px;
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-top: var(--hair) solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.cp-io:hover { border-color: var(--gold); transform: translateY(-2px); }
+.cp-io:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.cp-io__name { font-family: var(--font-display); font-weight: 600; font-size: var(--step-h1); line-height: 1.05; overflow-wrap: anywhere; }
+.cp-io__arrow { font-family: var(--font-mono); font-weight: 400; font-size: 0.6em; color: var(--gold); vertical-align: 0.15em; }
+@media (prefers-reduced-motion: reduce) { .cp-io, .cp-io:hover { transition: none; transform: none; } }
+
+/* =====================================================================
+   PRODUCT PAGE (product.html, Stage 10)
+   A5 and A7 are the dragonspire.io modules in calm form (a5.css / a7.css, copied unchanged).
+   ===================================================================== */
+
+.pr-hero h1 { max-width: 18ch; }
+.pr-hero .lede { max-width: 60ch; }
+
+/* who it is for */
+.pr-who {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+.pr-who__card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-5) var(--space-6);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: var(--hair) solid var(--gold);
+  border-radius: var(--radius);
+  min-width: 0;
+}
+.pr-who__card p { color: var(--muted); line-height: 1.6; }
+.pr-who__card--dev { border-top-style: dashed; }
+.pr-who__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-3); }
+.pr-who__title { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; margin: 0; }
+.pr-dev-tag { color: var(--gold); border-color: color-mix(in srgb, var(--gold) 55%, var(--line)); }
+
+/* where you play */
+.pr-surfaces {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5) var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+.pr-surface.p-web { --part: var(--players); }
+.pr-surface { display: grid; align-content: start; gap: var(--space-3); min-width: 0; padding-top: var(--space-4); border-top: 1px solid var(--line); }
+.pr-surface__icon {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: var(--part, var(--gold));
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pr-surface__name { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.2; margin: 0; }
+.pr-surface p { color: var(--muted); line-height: 1.6; }
+
+/* a game night: shared timeline, gold line */
+.pr-night { display: grid; gap: var(--space-6); }
+.pr-night__head { margin-bottom: 0; }
+.pr-timeline { max-width: 46rem; }
+.pr-timeline .timeline__step::after { border-left-color: var(--gold); opacity: 0.7; }
+.pr-timeline .timeline__body { padding-top: 0.55rem; }
+.pr-timeline .timeline__text { color: var(--text); font-size: 1.0625rem; line-height: 1.6; }
+@media (min-width: 900px) {
+  .pr-night { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-8); align-items: start; }
+  .pr-night__head { position: sticky; top: 104px; }
+}
+
+/* what the game master controls */
+.pr-controls { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); max-width: 46rem; }
+.pr-controls li { position: relative; padding-left: calc(var(--space-5) + 2px); font-size: 1.0625rem; line-height: 1.6; }
+.pr-controls li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.pr-mode { font-weight: 600; }
+
+/* rules automation chips */
+.pr-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-3); max-width: 60rem; }
+.pr-chip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15em 0.6em;
+  min-height: 40px;
+  padding: 0.5em 0.95em;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ember);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-size: 0.9688rem;
+  line-height: 1.35;
+  color: var(--text);
+  max-width: 100%;
+}
+.pr-chip__sub { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.02em; color: var(--muted); }
+.pr-rules-note { font-family: var(--font-display); font-weight: 600; font-size: var(--step-h3); line-height: 1.3; max-width: 40ch; }

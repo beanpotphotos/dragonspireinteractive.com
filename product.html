@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product · DragonSpire Interactive</title>
+<meta name="description" content="DragonSpire narrates, voices characters, rules on actions, runs monsters, tracks combat, and hands out loot and experience. The human GM keeps the final say.">
+<script>try{var t=localStorage.getItem("ds-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z M20 8 L26 17 V31 H14 V17 Z' fill='none' stroke='%23A8771A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/ds.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/a5.css">
+<link rel="stylesheet" href="assets/css/a7.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- SHELL: header (copy to every page; move aria-current="page" to that page's link) -->
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="logo" href="index.html" aria-label="DragonSpire Interactive, home"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z"/><path d="M20 8 L26 17 V31 H14 V17 Z M14 22 H26 M14 26.5 H26"/></svg><span><span class="logo__word">DragonSpire</span><span class="logo__sub">Interactive</span></span></a>
+    <div class="site-nav__tools"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button><button class="site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-menu"><span class="site-nav__bars" aria-hidden="true"></span><span class="site-nav__toggle-text">Menu</span></button></div>
+    <nav class="site-nav__menu" id="site-menu" aria-label="Main">
+      <ul class="site-nav__links">
+        <li><a href="product.html" aria-current="page">Product</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="company.html">Company</a></li>
+      </ul>
+      <a class="btn btn--secondary site-nav__cta" href="https://dragonspire.io">DragonSpire.io<span class="site-nav__ext" aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<!-- /SHELL: header -->
+
+<main id="main">
+  <!-- Hero -->
+  <section class="co-hero pr-hero" aria-labelledby="h-hero">
+    <div class="container co-hero__text">
+      <p class="eyebrow">Product</p>
+      <h1 id="h-hero">A game master for the whole table.</h1>
+      <p class="lede">DragonSpire narrates, voices characters, rules on actions, runs monsters, tracks combat, and hands out loot and experience. The human GM keeps the final say.</p>
+    </div>
+  </section>
+
+  <!-- Who it is for -->
+  <section class="section co-section" aria-labelledby="h-who">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-who">Who it is for</h2>
+      </div>
+      <ul class="pr-who">
+        <li class="pr-who__card">
+          <h3 class="pr-who__title">Game masters</h3>
+          <p>A co-GM that handles rules, bookkeeping, monster turns and narration drafts, with every consequential step behind an approval card. Or a stand-in GM when you want to play (Autonomous mode, in development).</p>
+        </li>
+        <li class="pr-who__card">
+          <h3 class="pr-who__title">Players</h3>
+          <p>A game master on voice, on the web and inside Fantasy Grounds, who never rolls for or decides for your character.</p>
+        </li>
+        <li class="pr-who__card pr-who__card--dev">
+          <div class="pr-who__head">
+            <h3 class="pr-who__title">Groups without a GM</h3>
+            <span class="badge pr-dev-tag">In development</span>
+          </div>
+          <p>Autonomous mode, where DragonSpire runs the table. In development; not yet proven live.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Where you play -->
+  <section class="section co-section co-section--tint" aria-labelledby="h-where">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-where">Where you play</h2>
+      </div>
+      <ul class="pr-surfaces">
+        <li class="pr-surface p-fgu">
+          <svg class="pr-surface__icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect x="5" y="5" width="30" height="30" rx="2"/><path d="M15 5 V35 M25 5 V35 M5 15 H35 M5 25 H35"/><circle cx="20" cy="20" r="3.2"/></svg>
+          <h3 class="pr-surface__name">Fantasy Grounds Unity</h3>
+          <p>It reads the live combat tracker, sheets and maps, and acts with the ruleset's own functions. Every Fantasy Grounds command passes a validator before it runs, and returns a receipt after.</p>
+        </li>
+        <li class="pr-surface p-dee">
+          <svg class="pr-surface__icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 17 V23 M10.5 12 V28 M16 7 V33 M21.5 13 V27 M27 9 V31 M32.5 15 V25"/></svg>
+          <h3 class="pr-surface__name">Discord voice</h3>
+          <p>A narrator voice, distinct NPC voices, and the manners to wait for a pause.</p>
+        </li>
+        <li class="pr-surface p-web">
+          <svg class="pr-surface__icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect x="4" y="7" width="32" height="26" rx="2.5"/><path d="M4 14 H36"/><circle cx="8.5" cy="10.5" r="0.9"/><circle cx="12" cy="10.5" r="0.9"/><circle cx="15.5" cy="10.5" r="0.9"/></svg>
+          <h3 class="pr-surface__name">The web</h3>
+          <p>Chat with the GM, roll 3D dice, see your sheet, the party and the initiative order. No Fantasy Grounds needed.</p>
+        </li>
+      </ul>
+      <!-- A5 (calm), shared with dragonspire.io -->
+      <figure class="diagram-frame a5 a5--calm" aria-label="One game master at three tables: Cory, the brain, is wired to Fantasy Grounds Unity, where a goblin takes 9 damage and drops from 12 to 3 hit points, to Discord voice, where Dee Emma narrates, and to the web, where a d20 lands and the chat reads &quot;Your axe bites deep. The goblin staggers.&quot;">
+        <div class="diagram-frame__panel">
+          <div class="a5__stage" aria-hidden="true">
+            <p class="a5-cory p-cory"><span class="a5-cory__name">Cory</span><span class="a5-cory__role">the brain</span></p>
+            <svg class="a5-wires" viewBox="0 0 1000 48" preserveAspectRatio="none" focusable="false">
+              <path class="a5-wire" pathLength="1" d="M500 0 V24 H162 V48"/>
+              <path class="a5-wire" pathLength="1" d="M500 0 V48"/>
+              <path class="a5-wire" pathLength="1" d="M500 0 V24 H838 V48"/>
+              <path class="a5-wire a5-wire--pulse" pathLength="1" d="M500 0 V24 H162 V48"/>
+              <path class="a5-wire a5-wire--pulse" pathLength="1" d="M500 0 V48"/>
+              <path class="a5-wire a5-wire--pulse" pathLength="1" d="M500 0 V24 H838 V48"/>
+            </svg>
+            <div class="a5-wins">
+
+              <div class="a5-win p-fgu">
+                <p class="a5-win__bar"><span class="a5-win__dots"><i></i><i></i><i></i></span><span class="a5-win__title">Fantasy Grounds Unity</span></p>
+                <svg class="a5-art" viewBox="0 0 300 188" focusable="false">
+                  <rect class="a5-map" x="9" y="10" width="168" height="168" rx="2"/>
+                  <path class="a5-grid" d="M33 10 V178 M57 10 V178 M81 10 V178 M105 10 V178 M129 10 V178 M153 10 V178 M9 34 H177 M9 58 H177 M9 82 H177 M9 106 H177 M9 130 H177 M9 154 H177"/>
+                  <path class="a5-wall" d="M129 10 V58 H177 M9 130 H33 V178"/>
+                  <g class="a5-tok a5-tok--pc"><circle cx="69" cy="94" r="9.5"/><circle class="a5-tok__dot" cx="69" cy="94" r="2.5"/></g>
+                  <g class="a5-tok a5-tok--pc"><circle cx="45" cy="142" r="9.5"/><circle class="a5-tok__dot" cx="45" cy="142" r="2.5"/></g>
+                  <g class="a5-tok a5-tok--foe"><circle cx="141" cy="118" r="9.5"/><text class="a5-tok__t" x="141" y="121.5">G</text></g>
+                  <circle class="a5-hit" cx="93" cy="94" r="13"/>
+                  <g class="a5-tok a5-tok--foe a5-goblin"><circle class="a5-goblin__body" cx="93" cy="94" r="9.5"/><text class="a5-tok__t" x="93" y="97.5">G</text></g>
+                  <rect class="a5-hp__track" x="81" y="108" width="24" height="3" rx="1.5"/>
+                  <rect class="a5-hp__fill" x="81" y="108" width="24" height="3" rx="1.5"/>
+                  <text class="a5-dmg" x="93" y="77">&minus;9</text>
+                  <text class="a5-t a5-t--label" x="188" y="21">Combat tracker</text>
+                  <g class="a5-row"><rect x="186" y="30" width="106" height="24" rx="3"/><text class="a5-t a5-t--num" x="194" y="46">18</text><text class="a5-t" x="212" y="46">Vael</text></g>
+                  <rect class="a5-row__hl" x="186" y="58" width="106" height="24" rx="3"/>
+                  <g class="a5-row"><rect x="186" y="58" width="106" height="24" rx="3"/><text class="a5-t a5-t--num" x="194" y="74">15</text><text class="a5-t" x="212" y="74">Goblin</text></g>
+                  <text class="a5-t a5-t--hp a5-hp-old" x="286" y="74">12</text>
+                  <text class="a5-t a5-t--hp a5-hp-new" x="286" y="74">3</text>
+                  <g class="a5-row"><rect x="186" y="86" width="106" height="24" rx="3"/><text class="a5-t a5-t--num" x="194" y="102">12</text><text class="a5-t" x="212" y="102">Brin</text></g>
+                  <g class="a5-row"><rect x="186" y="114" width="106" height="24" rx="3"/><text class="a5-t a5-t--num" x="194" y="130">9</text><text class="a5-t" x="212" y="130">Goblin 2</text></g>
+                  <g class="a5-row"><rect x="186" y="142" width="106" height="24" rx="3"/><text class="a5-t a5-t--num" x="194" y="158">6</text><text class="a5-t" x="212" y="158">Oska</text></g>
+                </svg>
+              </div>
+
+              <div class="a5-win p-dee">
+                <p class="a5-win__bar"><span class="a5-win__dots"><i></i><i></i><i></i></span><span class="a5-win__title">Discord voice</span></p>
+                <svg class="a5-art" viewBox="0 0 300 188" focusable="false">
+                  <path class="a5-spk" d="M11 13 H14 L18.5 9.5 V22.5 L14 19 H11 Z M22 12 Q25 16 22 20 M25 9.5 Q30 16 25 22.5"/>
+                  <text class="a5-t a5-t--label" x="34" y="20.5">voice · the table</text>
+                  <g class="a5-tile"><rect x="9" y="32" width="90" height="72" rx="6"/><circle class="a5-av" cx="54" cy="62" r="16"/><rect class="a5-name" x="34" y="90" width="40" height="4" rx="2"/></g>
+                  <g class="a5-tile"><rect x="201" y="32" width="90" height="72" rx="6"/><circle class="a5-av" cx="246" cy="62" r="16"/><rect class="a5-name" x="230" y="90" width="32" height="4" rx="2"/></g>
+                  <g class="a5-tile"><rect x="9" y="110" width="90" height="72" rx="6"/><circle class="a5-av" cx="54" cy="140" r="16"/><rect class="a5-name" x="32" y="168" width="44" height="4" rx="2"/></g>
+                  <g class="a5-tile"><rect x="105" y="110" width="90" height="72" rx="6"/><circle class="a5-av" cx="150" cy="140" r="16"/><rect class="a5-name" x="132" y="168" width="36" height="4" rx="2"/></g>
+                  <g class="a5-tile"><rect x="201" y="110" width="90" height="72" rx="6"/><circle class="a5-av" cx="246" cy="140" r="16"/><rect class="a5-name" x="226" y="168" width="40" height="4" rx="2"/></g>
+                  <g class="a5-tile a5-tile--dee"><rect x="105" y="32" width="90" height="72" rx="6"/><circle class="a5-av a5-av--dee" cx="150" cy="62" r="16"/><text class="a5-av__t" x="150" y="67">DE</text><text class="a5-t a5-t--dee" x="150" y="96">Dee Emma</text></g>
+                  <g class="a5-speak">
+                    <rect class="a5-speak__tile" x="105" y="32" width="90" height="72" rx="6"/>
+                    <circle class="a5-speak__pulse" cx="150" cy="62" r="20"/>
+                    <circle class="a5-speak__ring" cx="150" cy="62" r="20"/>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="a5-win p-web">
+                <p class="a5-win__bar"><span class="a5-win__dots"><i></i><i></i><i></i></span><span class="a5-win__url">play.dragonspire.io</span></p>
+                <svg class="a5-art" viewBox="0 0 300 188" focusable="false">
+                  <text class="a5-t a5-t--label" x="10" y="21">Chat</text>
+                  <rect class="a5-bub" x="10" y="30" width="122" height="24" rx="6"/><rect class="a5-name" x="18" y="37" width="70" height="3.5" rx="1.75"/><rect class="a5-name" x="18" y="45" width="96" height="3.5" rx="1.75"/>
+                  <rect class="a5-bub" x="62" y="60" width="114" height="18" rx="6"/><rect class="a5-name" x="70" y="67.25" width="86" height="3.5" rx="1.75"/>
+                  <g class="a5-say">
+                    <rect class="a5-say__bub" x="10" y="86" width="166" height="56" rx="6"/>
+                    <text class="a5-t a5-t--gm" x="19" y="101">GM</text>
+                    <text class="a5-t a5-t--say" x="19" y="117">Your axe bites deep.</text>
+                    <text class="a5-t a5-t--say" x="19" y="132">The goblin staggers.</text>
+                  </g>
+                  <rect class="a5-bub" x="10" y="154" width="166" height="24" rx="12"/><rect class="a5-name" x="22" y="164.25" width="58" height="3.5" rx="1.75"/>
+                  <g class="a5-die"><path transform="translate(213.6 8) scale(2.2)" d="M12 2 L21 7 V17 L12 22 L3 17 V7 Z M12 2 L7 10 H17 Z M7 10 L3 17 M17 10 L21 17 M7 10 L12 22 L17 10 M3 7 L7 10 M21 7 L17 10"/></g>
+                  <text class="a5-die__n" x="240" y="76">14</text>
+                  <rect class="a5-bub" x="190" y="94" width="100" height="84" rx="4"/>
+                  <rect class="a5-name a5-name--strong" x="198" y="103" width="46" height="5" rx="2.5"/>
+                  <text class="a5-t a5-t--tiny" x="198" y="125">HP</text>
+                  <rect class="a5-hp__track" x="216" y="120" width="66" height="4" rx="2"/>
+                  <rect class="a5-sheet__hp" x="216" y="120" width="54" height="4" rx="2"/>
+                  <rect class="a5-box" x="198" y="138" width="24" height="30" rx="3"/><rect class="a5-box" x="228" y="138" width="24" height="30" rx="3"/><rect class="a5-box" x="258" y="138" width="24" height="30" rx="3"/>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+          <p class="a5__caption">Three tables. <em>One game master.</em></p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- A game night -->
+  <section class="section co-section" aria-labelledby="h-night">
+    <div class="container pr-night">
+      <div class="section-head pr-night__head">
+        <h2 id="h-night">A game night</h2>
+      </div>
+      <ol class="timeline pr-timeline">
+        <li class="timeline__step"><div class="timeline__body"><p class="timeline__text">The GM opens Fantasy Grounds; FGU Link connects to Cory. Players join Fantasy Grounds and Discord; Dee Emma says hello once.</p></div></li>
+        <li class="timeline__step"><div class="timeline__body"><p class="timeline__text">The GM picks a mode: Passive, Assistant or Autonomous.</p></div></li>
+        <li class="timeline__step"><div class="timeline__body"><p class="timeline__text">Players talk. Cory decides whether a line is meant for the GM, checks whose turn it is, and answers, aloud in Discord and in Fantasy Grounds.</p></div></li>
+        <li class="timeline__step"><div class="timeline__body"><p class="timeline__text">A fight starts. Monsters go on the combat tracker, players roll their own initiative, and Cory follows the tracker turn by turn, asking each player to roll and suggesting each monster's move for the GM to confirm.</p></div></li>
+        <li class="timeline__step"><div class="timeline__body"><p class="timeline__text">The last foe falls. Experience is paid once. The GM offers loot; loot a player simply claims is refused.</p></div></li>
+        <li class="timeline__step"><div class="timeline__body"><p class="timeline__text">A quiet table gets one gentle prompt. A long silence is treated as a break.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- What the game master controls -->
+  <section class="section co-section co-section--tint" aria-labelledby="h-controls">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-controls">What the game master controls</h2>
+      </div>
+      <ul class="pr-controls">
+        <li>Four modes: <span class="pr-modes"><span class="pr-mode">Disabled</span>, <span class="pr-mode">Passive</span>, <span class="pr-mode">Assistant</span>, <span class="pr-mode">Autonomous</span></span>.</li>
+        <li>Approval cards for consequential steps.</li>
+        <li>Monster actions are suggestions until confirmed.</li>
+        <li>Narration is held for release in Assistant mode.</li>
+        <li>An emergency stop clears everything.</li>
+      </ul>
+      <!-- A7 (calm), shared with dragonspire.io -->
+      <figure class="diagram-frame a7 a7--calm" role="img" aria-label="The game master approves a card for Goblin 2's scimitar attack on Vael (+4 to hit, 1d6+2) and the attack plays out on a small map, beside a DM mode switch of Disabled, Passive, Assistant (selected) and Autonomous (in development).">
+        <div class="diagram-frame__panel">
+          <div class="a7__stage" aria-hidden="true">
+
+            <div class="a7-desk">
+              <div class="a7-card p-fgu">
+                <p class="a7-card__head"><span class="a7-card__kicker">Suggested action</span><span class="a7-card__who">Goblin 2</span></p>
+                <p class="a7-card__text">Goblin 2 attacks Vael with a scimitar. <span class="a7-card__roll">+4 to hit, 1d6+2.</span></p>
+                <p class="a7-card__btns">
+                  <span class="a7-btn a7-btn--approve">Approve<svg class="a7-cursor" viewBox="0 0 20 24" focusable="false"><path d="M2 1.5 L2 19 L6.6 14.8 L9.6 21.6 L12.8 20.2 L9.9 13.5 L16 13.2 Z"/></svg></span>
+                  <span class="a7-btn a7-btn--other">Edit</span>
+                  <span class="a7-btn a7-btn--other">Skip</span>
+                </p>
+                <span class="a7-stamp">approved</span>
+              </div>
+            </div>
+
+            <div class="a7-map">
+              <p class="a7-label">Map</p>
+              <svg class="a7-map__art" viewBox="0 0 168 120" focusable="false">
+                <rect class="a7-map__bg" x="0.5" y="0.5" width="167" height="119" rx="3"/>
+                <path class="a7-map__grid" d="M24 0.5 V119.5 M48 0.5 V119.5 M72 0.5 V119.5 M96 0.5 V119.5 M120 0.5 V119.5 M144 0.5 V119.5 M0.5 24 H167.5 M0.5 48 H167.5 M0.5 72 H167.5 M0.5 96 H167.5"/>
+                <path class="a7-map__wall" d="M0.5 96 H48 M144 0.5 V48"/>
+                <path class="a7-path" d="M132 36 L108 60"/>
+                <g class="a7-vael"><circle class="a7-vael__flash" cx="84" cy="60" r="14"/><circle class="a7-tok a7-tok--pc" cx="84" cy="60" r="9"/><text class="a7-tok__t a7-tok__t--pc" x="84" y="63.5">V</text></g>
+                <g class="a7-gob"><circle class="a7-tok a7-tok--foe" cx="108" cy="60" r="9"/><text class="a7-tok__t" x="108" y="63.5">G2</text></g>
+                <path class="a7-slash" pathLength="1" d="M99 45 Q84 58 95 76"/>
+              </svg>
+            </div>
+
+            <div class="a7-modes">
+              <p class="a7-label">DM mode</p>
+              <ol class="a7-switch">
+                <li class="a7-opt"><span class="a7-opt__dot"></span>Disabled</li>
+                <li class="a7-opt"><span class="a7-opt__dot"></span>Passive</li>
+                <li class="a7-opt a7-opt--on"><span class="a7-opt__dot"></span>Assistant</li>
+                <li class="a7-opt"><span class="a7-opt__dot"></span>Autonomous <span class="a7-tag">in development</span></li>
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Rules automation -->
+  <section class="section co-section" aria-labelledby="h-rules">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-rules">Rules automation inside the tabletop</h2>
+      </div>
+      <ul class="pr-chips">
+        <li class="pr-chip">Cover</li>
+        <li class="pr-chip">Movement budget</li>
+        <li class="pr-chip">Difficult terrain</li>
+        <li class="pr-chip">Opportunity attacks</li>
+        <li class="pr-chip pr-chip--group">Reactions <span class="pr-chip__sub">Shield, Counterspell, Uncanny Dodge, Sentinel</span></li>
+        <li class="pr-chip">Sneak Attack</li>
+        <li class="pr-chip">Grapple</li>
+        <li class="pr-chip">Lingering spell areas</li>
+        <li class="pr-chip">Summons</li>
+        <li class="pr-chip">XP once per fight</li>
+      </ul>
+      <p class="pr-rules-note">All run with Fantasy Grounds' own functions.</p>
+    </div>
+  </section>
+</main>
+
+<!-- SHELL: footer (copy to every page unchanged) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <a class="logo" href="index.html" aria-label="DragonSpire Interactive, home"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z"/><path d="M20 8 L26 17 V31 H14 V17 Z M14 22 H26 M14 26.5 H26"/></svg><span><span class="logo__word">DragonSpire</span><span class="logo__sub">Interactive</span></span></a>
+      <ul class="site-footer__links">
+        <li><a href="product.html">Product</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="https://dragonspire.io">DragonSpire.io</a></li>
+      </ul>
+    </div>
+    <p class="site-footer__made">DragonSpire is made by DragonSpire Interactive.</p>
+    <p class="site-footer__legal">Fantasy Grounds Unity is a product of SmiteWorks. Dungeons &amp; Dragons is a trademark of Wizards of the Coast. DragonSpire is not affiliated with either.</p>
+  </div>
+</footer>
+<!-- /SHELL: footer -->
+
+<script src="assets/js/ds.js"></script>
+<script src="assets/js/a5.js"></script>
+<script src="assets/js/a7.js"></script>
+</body>
+</html>

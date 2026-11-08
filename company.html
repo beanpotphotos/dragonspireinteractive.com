@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company · DragonSpire Interactive</title>
+<meta name="description" content="Started as a home game that needed a game master and became a system.">
+<script>try{var t=localStorage.getItem("ds-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z M20 8 L26 17 V31 H14 V17 Z' fill='none' stroke='%23A8771A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/ds.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- SHELL: header (copy to every page; move aria-current="page" to that page's link) -->
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="logo" href="index.html" aria-label="DragonSpire Interactive, home"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z"/><path d="M20 8 L26 17 V31 H14 V17 Z M14 22 H26 M14 26.5 H26"/></svg><span><span class="logo__word">DragonSpire</span><span class="logo__sub">Interactive</span></span></a>
+    <div class="site-nav__tools"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button><button class="site-nav__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-menu"><span class="site-nav__bars" aria-hidden="true"></span><span class="site-nav__toggle-text">Menu</span></button></div>
+    <nav class="site-nav__menu" id="site-menu" aria-label="Main">
+      <ul class="site-nav__links">
+        <li><a href="product.html">Product</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="company.html" aria-current="page">Company</a></li>
+      </ul>
+      <a class="btn btn--secondary site-nav__cta" href="https://dragonspire.io">DragonSpire.io<span class="site-nav__ext" aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<!-- /SHELL: header -->
+
+<main id="main">
+  <!-- Hero -->
+  <section class="co-hero cp-hero" aria-labelledby="h-hero">
+    <div class="container co-hero__text">
+      <p class="eyebrow">Company</p>
+      <h1 id="h-hero">DragonSpire Interactive</h1>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="section co-section" aria-labelledby="h-founder">
+    <div class="container cp-founder">
+      <figure class="cp-portrait" aria-hidden="true">
+        <svg viewBox="0 0 200 200" focusable="false">
+          <circle class="cp-portrait__ring" cx="100" cy="100" r="96"/>
+          <circle class="cp-portrait__ring cp-portrait__ring--in" cx="100" cy="100" r="86"/>
+          <path class="cp-portrait__hex" d="M100 30 L160.6 65 V135 L100 170 L39.4 135 V65 Z"/>
+          <text class="cp-portrait__m" x="100" y="123" text-anchor="middle">M</text>
+        </svg>
+      </figure>
+      <div class="cp-founder__text">
+        <p class="eyebrow">Founder</p>
+        <h2 id="h-founder">Mike</h2>
+        <p>Mike is the founder of DragonSpire Interactive. He plays tabletop D&amp;D with a regular home group on Fantasy Grounds Unity, and he started DragonSpire because the AI game masters he tried could not keep track of the rules, the dice or the battlefield. He designed DragonSpire as a system where tested code, live game state and databases run the game, and the AI handles the narration and the voices. He built it with his own table as the testing ground, and it is now in alpha.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it is built -->
+  <section class="section co-section co-section--tint" aria-labelledby="h-built">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-built">How DragonSpire is built</h2>
+      </div>
+      <p class="cp-body">Started as a home game that needed a game master and became a system. DragonSpire has been built in the open with AI coding agents under strict engineering rules: hexagonal architecture, tests before every push, and documentation as the source of truth.</p>
+    </div>
+  </section>
+
+  <!-- Contact + DragonSpire.io -->
+  <section class="section co-section" aria-labelledby="h-contact">
+    <div class="container cp-end">
+      <div class="cp-contact">
+        <h2 id="h-contact">Contact</h2>
+        <div class="cp-email">
+          <span class="cp-email__addr" id="cp-email">mike@dragonspireinteractive.com</span>
+          <button class="btn btn--secondary cp-copy" type="button" data-copy="#cp-email">Copy</button>
+        </div>
+        <p class="cp-copy-status mono" role="status" aria-live="polite"></p>
+      </div>
+      <a class="cp-io" href="https://dragonspire.io">
+        <span class="eyebrow">AI Game Master</span>
+        <span class="cp-io__name">DragonSpire.io <span class="cp-io__arrow" aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- SHELL: footer (copy to every page unchanged) -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <a class="logo" href="index.html" aria-label="DragonSpire Interactive, home"><svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 L35.6 11 V29 L20 38 L4.4 29 V11 Z"/><path d="M20 8 L26 17 V31 H14 V17 Z M14 22 H26 M14 26.5 H26"/></svg><span><span class="logo__word">DragonSpire</span><span class="logo__sub">Interactive</span></span></a>
+      <ul class="site-footer__links">
+        <li><a href="product.html">Product</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="status.html">Status</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="https://dragonspire.io">DragonSpire.io</a></li>
+      </ul>
+    </div>
+    <p class="site-footer__made">DragonSpire is made by DragonSpire Interactive.</p>
+    <p class="site-footer__legal">Fantasy Grounds Unity is a product of SmiteWorks. Dungeons &amp; Dragons is a trademark of Wizards of the Coast. DragonSpire is not affiliated with either.</p>
+  </div>
+</footer>
+<!-- /SHELL: footer -->
+
+<script src="assets/js/ds.js"></script>
+<script src="assets/js/company.js"></script>
+</body>
+</html>
