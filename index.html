@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="assets/css/ds.css">
 <link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/a1.css">
 <link rel="stylesheet" href="assets/css/a2.css">
 <link rel="stylesheet" href="assets/css/a3.css">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -49,58 +50,98 @@
       <div class="co-hero__text">
         <p class="eyebrow">DragonSpire Interactive</p>
         <h1 id="h-hero">An AI game master built like software, not like a prompt.</h1>
-        <p class="lede">DragonSpire runs Dungeons &amp; Dragons games inside Fantasy Grounds Unity, in Discord voice and on the web. It works because the AI is only one part of it. A rules engine rolls the dice, databases remember the world, and tested code keeps the game fair.</p>
+        <p class="lede">DragonSpire runs Dungeons &amp; Dragons games using Fantasy Grounds Unity, Discord voice and / or a web browser interface. It works because the AI is only one part of it. A rules engine rolls the dice, databases hold the world, and code keeps the game grounded.</p>
       </div>
-      <figure class="diagram-frame co-hero__art">
-        <div class="diagram-frame__panel">
-<svg class="diagram draw-on-view" viewBox="80 0 320 600" role="img" aria-labelledby="hero-spire-t">
-<title id="hero-spire-t">Five chambers stacked as a spire: Cory at the top, then Dee Emma, Campaign Manager, DragonLibrary and FGU Link at the base.</title>
-<path class="ln" pathLength="1" d="M90 596 H390"/>
-<path class="ln" pathLength="1" d="M140 110 L240 30 L340 110"/>
-<path class="ln" pathLength="1" d="M240 30 V18"/>
-<g class="node" style="--i:0"><path class="ln" pathLength="1" d="M240 44 l14 8 v16 l-14 8 l-14 -8 v-16 z M240 47 L229 66 H251 Z M240 47 V44 M229 66 L226 68 M251 66 L254 68" style="stroke-width:1.2"/></g>
-<path class="ln" pathLength="1" d="M240 180 V210"/>
-<path class="ln" pathLength="1" d="M240 280 V310"/>
-<path class="ln" pathLength="1" d="M240 380 V410"/>
-<path class="ln" pathLength="1" d="M240 480 V510"/>
-<g class="node p-fgu" style="--i:0">
-  <rect class="chamber" x="100" y="510" width="280" height="70" rx="4"/>
-  <rect class="chamber-glow" x="100" y="510" width="280" height="70" rx="4"/>
-  <rect class="chamber-rule" x="112" y="524" width="3" height="42" rx="1.5"/>
-  <text class="t-name" x="128" y="544">FGU Link</text>
-  <text class="t-role" x="128" y="563">THE HANDS</text>
+    <figure class="a1" id="a1-slot" role="img" aria-label="The DragonSpire spire builds itself from the ground up in five chambers, FGU Link (the hands), DragonLibrary (the rulebook), Campaign Manager (the memory), Dee Emma (the voice) and Cory (the brain) at the top, with dots of light travelling between them.">
+      <div class="a1__stage" aria-hidden="true">
+<svg class="a1-svg" viewBox="0 0 240 556" aria-hidden="true" focusable="false">
+<defs><filter id="a1-blur" x="-40%" y="-60%" width="180%" height="220%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<g class="a1-frame">
+<path class="a1-ln a1-ln--ground" pathLength="1" d="M8 540 H232"/>
+<path class="a1-ln a1-ln--wall" pathLength="1" d="M13 540 L66 120"/>
+<path class="a1-ln a1-ln--wall" pathLength="1" d="M227 540 L174 120"/>
+<g class="a1-dim">
+<path d="M14 532 V120"/>
+<path d="M10 532 H18 M10 464 H18"/>
+<path d="M10 446 H18 M10 378 H18"/>
+<path d="M10 360 H18 M10 292 H18"/>
+<path d="M10 274 H18 M10 206 H18"/>
+<path d="M10 188 H18 M10 120 H18"/>
 </g>
-<g class="node p-library" style="--i:1">
-  <rect class="chamber" x="110" y="410" width="260" height="70" rx="4"/>
-  <rect class="chamber-glow" x="110" y="410" width="260" height="70" rx="4"/>
-  <rect class="chamber-rule" x="122" y="424" width="3" height="42" rx="1.5"/>
-  <text class="t-name" x="138" y="444">DragonLibrary</text>
-  <text class="t-role" x="138" y="463">THE RULEBOOK</text>
 </g>
-<g class="node p-cm" style="--i:2">
-  <rect class="chamber" x="120" y="310" width="240" height="70" rx="4"/>
-  <rect class="chamber-glow" x="120" y="310" width="240" height="70" rx="4"/>
-  <rect class="chamber-rule" x="132" y="324" width="3" height="42" rx="1.5"/>
-  <text class="t-name" x="148" y="344">Campaign Manager</text>
-  <text class="t-role" x="148" y="363">THE MEMORY</text>
+<g class="a1-roof">
+<path class="a1-ln" pathLength="1" d="M58 120 H182"/>
+<path class="a1-ln" pathLength="1" d="M66 120 L120 62 L174 120"/>
+<path class="a1-ln" pathLength="1" d="M120 62 V54"/>
 </g>
-<g class="node p-dee" style="--i:3">
-  <rect class="chamber" x="130" y="210" width="220" height="70" rx="4"/>
-  <rect class="chamber-glow" x="130" y="210" width="220" height="70" rx="4"/>
-  <rect class="chamber-rule" x="142" y="224" width="3" height="42" rx="1.5"/>
-  <text class="t-name" x="158" y="244">Dee Emma</text>
-  <text class="t-role" x="158" y="263">THE VOICE</text>
+<g class="a1-d20"><g class="a1-d20__spin">
+<path d="M120 14 L137.3 24 V44 L120 54 L102.7 44 V24 Z M120 19 L107 42 H133 Z M120 19 V14 M107 42 L102.7 44 M133 42 L137.3 44 M107 42 L120 54 L133 42"/>
+</g></g>
+<g class="a1-ch p-fgu" style="--i:0">
+  <path class="a1-ch__glow" d="M24 532 L32.6 464 H207.4 L216 532 Z" filter="url(#a1-blur)"/>
+  <path class="a1-ch__fill" d="M24 532 L32.6 464 H207.4 L216 532 Z"/>
+  <path class="a1-ch__draw" pathLength="1" d="M24 532 L32.6 464 H207.4 L216 532 Z"/>
+  <path class="a1-ch__lit" d="M24 532 L32.6 464 H207.4 L216 532 Z"/>
+  <path class="a1-ch__band" d="M39.6 472 H200.4"/>
 </g>
-<g class="node p-cory" style="--i:4">
-  <rect class="chamber" x="140" y="110" width="200" height="70" rx="4"/>
-  <rect class="chamber-glow" x="140" y="110" width="200" height="70" rx="4"/>
-  <rect class="chamber-rule" x="152" y="124" width="3" height="42" rx="1.5"/>
-  <text class="t-name" x="168" y="144">Cory</text>
-  <text class="t-role" x="168" y="163">THE BRAIN</text>
+<g class="a1-ch p-library" style="--i:1">
+  <path class="a1-ch__glow" d="M34.9 446 L43.4 378 H196.6 L205.1 446 Z" filter="url(#a1-blur)"/>
+  <path class="a1-ch__fill" d="M34.9 446 L43.4 378 H196.6 L205.1 446 Z"/>
+  <path class="a1-ch__draw" pathLength="1" d="M34.9 446 L43.4 378 H196.6 L205.1 446 Z"/>
+  <path class="a1-ch__lit" d="M34.9 446 L43.4 378 H196.6 L205.1 446 Z"/>
+  <path class="a1-ch__band" d="M50.4 386 H189.6"/>
+</g>
+<g class="a1-ch p-cm" style="--i:2">
+  <path class="a1-ch__glow" d="M45.7 360 L54.3 292 H185.7 L194.3 360 Z" filter="url(#a1-blur)"/>
+  <path class="a1-ch__fill" d="M45.7 360 L54.3 292 H185.7 L194.3 360 Z"/>
+  <path class="a1-ch__draw" pathLength="1" d="M45.7 360 L54.3 292 H185.7 L194.3 360 Z"/>
+  <path class="a1-ch__lit" d="M45.7 360 L54.3 292 H185.7 L194.3 360 Z"/>
+  <path class="a1-ch__band" d="M61.3 300 H178.7"/>
+</g>
+<g class="a1-ch p-dee" style="--i:3">
+  <path class="a1-ch__glow" d="M56.6 274 L65.1 206 H174.9 L183.4 274 Z" filter="url(#a1-blur)"/>
+  <path class="a1-ch__fill" d="M56.6 274 L65.1 206 H174.9 L183.4 274 Z"/>
+  <path class="a1-ch__draw" pathLength="1" d="M56.6 274 L65.1 206 H174.9 L183.4 274 Z"/>
+  <path class="a1-ch__lit" d="M56.6 274 L65.1 206 H174.9 L183.4 274 Z"/>
+  <path class="a1-ch__band" d="M72.1 214 H167.9"/>
+</g>
+<g class="a1-ch p-cory" style="--i:4">
+  <path class="a1-ch__glow" d="M67.4 188 L76 120 H164 L172.6 188 Z" filter="url(#a1-blur)"/>
+  <path class="a1-ch__fill" d="M67.4 188 L76 120 H164 L172.6 188 Z"/>
+  <path class="a1-ch__draw" pathLength="1" d="M67.4 188 L76 120 H164 L172.6 188 Z"/>
+  <path class="a1-ch__lit" d="M67.4 188 L76 120 H164 L172.6 188 Z"/>
+  <path class="a1-ch__band" d="M83 128 H157"/>
+</g>
+<g class="a1-rails">
+<path class="a1-rail" style="--i:1" pathLength="1" d="M109 498.0 V412.0 M131 412.0 V498.0"/>
+<path class="a1-rail" style="--i:2" pathLength="1" d="M109 412.0 V326.0 M131 326.0 V412.0"/>
+<path class="a1-rail" style="--i:3" pathLength="1" d="M109 326.0 V240.0 M131 240.0 V326.0"/>
+<path class="a1-rail" style="--i:4" pathLength="1" d="M109 240.0 V154.0 M131 154.0 V240.0"/>
+</g>
+<g class="a1-ports">
+<g class="p-fgu" style="--i:0"><circle class="a1-port" cx="109" cy="498.0" r="2.6"/><circle class="a1-port" cx="131" cy="498.0" r="2.6"/></g>
+<g class="p-library" style="--i:1"><circle class="a1-port" cx="109" cy="412.0" r="2.6"/><circle class="a1-port" cx="131" cy="412.0" r="2.6"/></g>
+<g class="p-cm" style="--i:2"><circle class="a1-port" cx="109" cy="326.0" r="2.6"/><circle class="a1-port" cx="131" cy="326.0" r="2.6"/></g>
+<g class="p-dee" style="--i:3"><circle class="a1-port" cx="109" cy="240.0" r="2.6"/><circle class="a1-port" cx="131" cy="240.0" r="2.6"/></g>
+<g class="p-cory" style="--i:4"><circle class="a1-port" cx="109" cy="154.0" r="2.6"/><circle class="a1-port" cx="131" cy="154.0" r="2.6"/></g>
+</g>
+<g class="a1-dots">
+<circle class="a1-dot a1-dot--up" cx="109" cy="0" r="2.6" style="animation-delay:0s"/>
+<circle class="a1-dot a1-dot--up" cx="109" cy="0" r="2.6" style="animation-delay:-2.1s"/>
+<circle class="a1-dot a1-dot--dn" cx="131" cy="0" r="2.6" style="animation-delay:-1.0s"/>
+<circle class="a1-dot a1-dot--dn" cx="131" cy="0" r="2.6" style="animation-delay:-3.1s"/>
+<circle class="a1-dot a1-dot--up" cx="109" cy="0" r="2.6" style="animation-delay:-3.6s"/>
 </g>
 </svg>
-        </div>
-      </figure>
+<ol class="a1-labels">
+<li class="a1-label p-fgu" style="--i:0;--y:89.57%;--edge:0.8821"><span class="a1-label__name">FGU Link</span><span class="a1-label__role">the hands</span></li>
+<li class="a1-label p-library" style="--i:1;--y:74.10%;--edge:0.8369"><span class="a1-label__name">DragonLibrary</span><span class="a1-label__role">the rulebook</span></li>
+<li class="a1-label p-cm" style="--i:2;--y:58.63%;--edge:0.7917"><span class="a1-label__name">Campaign Manager</span><span class="a1-label__role">the memory</span></li>
+<li class="a1-label p-dee" style="--i:3;--y:43.17%;--edge:0.7464"><span class="a1-label__name">Dee Emma</span><span class="a1-label__role">the voice</span></li>
+<li class="a1-label p-cory" style="--i:4;--y:27.70%;--edge:0.7012"><span class="a1-label__name">Cory</span><span class="a1-label__role">the brain</span></li>
+</ol>
+      </div>
+    </figure>
     </div>
   </section>
 
@@ -109,7 +150,7 @@
     <div class="container co-stack">
       <div class="section-head">
         <p class="eyebrow">The problem</p>
-        <h2 id="h-problem">“AI Dungeon Master” usually means a chatbot with a costume.</h2>
+        <h2 id="h-problem">“AI Dungeon Master” usually means a chatbot with a wizard hat costume.</h2>
       </div>
       <div class="co-essay">
         <div class="co-essay__body">
@@ -171,7 +212,7 @@
             </section>
           </div>
           <div class="a2__foot a2-scope" data-a2-length="13.2">
-            <p class="a2__caption a2-step" style="--t:11.9">Same request. <em>One of them is running a game.</em></p>
+            <p class="a2__caption"></p>
             <button class="btn btn--secondary a2-replay" type="button">Replay <span aria-hidden="true">&#8635;</span></button>
           </div>
         </div>
@@ -184,7 +225,7 @@
     <div class="container co-stack">
       <div class="section-head">
         <p class="eyebrow">The approach</p>
-        <h2 id="h-approach">AI where it is good. Code where it must be right.</h2>
+        <h2 id="h-approach">AI where it is good. Database where it must be right. Code where it needs to stay grounded</h2>
       </div>
       <div class="table-wrap co-table">
         <table class="compare">
@@ -352,6 +393,7 @@
 <!-- /SHELL: footer -->
 
 <script src="assets/js/ds.js"></script>
+<script src="assets/js/a1.js"></script>
 <script src="assets/js/a2.js"></script>
 <script src="assets/js/a3.js"></script>
 </body>

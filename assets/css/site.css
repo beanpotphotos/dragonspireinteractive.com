@@ -37,7 +37,7 @@ main { display: block; }
 .co-hero__art { margin: 0; justify-self: center; width: 100%; max-width: 210px; }
 .co-hero__art .diagram-frame__panel { padding: var(--space-4) var(--space-5); }
 @media (min-width: 900px) {
-  .co-hero__grid { grid-template-columns: minmax(0, 1fr) 300px; gap: var(--space-8); }
+  .co-hero__grid { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-8); }
   .co-hero__art { max-width: 300px; justify-self: end; }
 }
 
