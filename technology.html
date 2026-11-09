@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Technology · DragonSpire Interactive</title>
-<meta name="description" content="Three services, two databases, one rule: the game rules never depend on which model is used.">
+<meta name="description" content="DragonSpire has a front of house, Dee Emma, and a backend, Cory, with databases for the world and the rules and a bridge to Fantasy Grounds.">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("ds-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -46,7 +46,7 @@
     <div class="container co-hero__text">
       <p class="eyebrow">Technology</p>
       <h1 id="h-hero">How DragonSpire is built.</h1>
-      <p class="lede">Three services, two databases, one rule: the game rules never depend on which model is used.</p>
+      <p class="lede">DragonSpire has a front of house and a backend. Dee Emma is the front of house: she hears and speaks to players in Discord and on the web. Cory is the backend, a Python core with its own database that runs the game, alongside Campaign Manager and DragonLibrary, the official databases for the world and the rules. FGU Link bridges to Fantasy Grounds on your own computer. AI models tell the story and voice it.</p>
     </div>
   </section>
 
@@ -198,7 +198,7 @@
           <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
         </div>
         <figcaption class="tech-cap">
-          <p class="diagram-frame__cap">Cory, the engine, runs on a cloud server beside Dee Emma, the Discord voice, and Campaign Manager, the world database. FGU Link runs on the GM’s PC beside Fantasy Grounds. Cory calls AI models for the story; Dee Emma’s voice comes from an AI voice model, called through Cory.</p>
+          <p class="diagram-frame__cap">Dee Emma is the front of house, in Discord and on the web. Cory is the backend, with Campaign Manager and DragonLibrary beside it. FGU Link runs on the GM’s PC beside Fantasy Grounds. Cory calls AI models for the story; Dee Emma’s voice comes from an AI voice model, called through Cory.</p>
           <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
         </figcaption>
       </figure>
@@ -225,7 +225,7 @@
             </tr>
             <tr class="p-dee">
               <th scope="row">Dee Emma</th>
-              <td data-label="Runs on">cloud server, 24/7</td>
+              <td data-label="Runs on">cloud server</td>
               <td data-label="Built with">Python Discord bot</td>
               <td data-label="Uses AI?"><span class="tech-yes">yes</span>, her voice comes from an AI voice model, called through Cory</td>
             </tr>
@@ -233,7 +233,7 @@
               <th scope="row">FGU Link</th>
               <td data-label="Runs on">GM’s Windows PC</td>
               <td data-label="Built with">Lua extension + Python daemon</td>
-              <td data-label="Uses AI?"><span class="tech-no">no</span>, enforced by tests</td>
+              <td data-label="Uses AI?"><span class="tech-no">no</span></td>
             </tr>
             <tr class="p-cm">
               <th scope="row">Campaign Manager</th>
@@ -245,7 +245,7 @@
               <th scope="row">DragonLibrary</th>
               <td data-label="Runs on">cloud server</td>
               <td data-label="Built with">PocketBase, public read-only API + browse website</td>
-              <td data-label="Uses AI?"><span class="tech-no">no</span> (codes were drafted offline, then checked and tiered)</td>
+              <td data-label="Uses AI?"><span class="tech-no">no</span></td>
             </tr>
           </tbody>
         </table>
@@ -253,202 +253,33 @@
     </div>
   </section>
 
-  <!-- The data services -->
+  <!-- Memory and rules -->
   <section class="section co-section tech-sec" aria-labelledby="h-data">
     <div class="container co-stack">
       <div class="section-head">
-        <h2 id="h-data">The data services: memory and rules</h2>
+        <h2 id="h-data">Memory and rules</h2>
       </div>
-      <div class="tech-services">
-        <article class="tech-service p-cm" aria-labelledby="h-cm">
-          <h3 id="h-cm">Campaign Manager, the world’s memory.</h3>
-          <p>The GM writes the world in its own web app: a World Explorer tree of nested places (continent, region, town, tavern) with the NPCs in each, an Adventure Explorer of quests, and public pages players open from links in the chat. Fifteen collections: worlds, campaigns, locations, NPCs with backstories and motives, items, inventories, adventures, quests and quest progress. On every turn Cory hands the AI the party’s surroundings from it: the place, its parent places, what is nearby and who is there. When the party travels, Cory reuses a real place before it invents one. Party state (hit points, sheets, position) never goes there; that belongs to Fantasy Grounds and Cory’s own database.</p>
-          <figure class="diagram-frame tech-fig tech-fig--tl tech-fig--d7" id="d7" data-tech-anim>
-            <div class="diagram-frame__panel">
-              <div class="tech-scroll" tabindex="0" role="region" aria-label="World memory diagram">
-<!-- D7:START -->
-<svg class="tech-svg" viewBox="0 0 560 880" role="img" aria-labelledby="d7-t" focusable="false">
-<title id="d7-t">The GM writes the world once in the Campaign Manager web app, a tree of nested places from Bethica down to a tavern with its NPCs and a quest list; each turn Campaign Manager hands Cory a context card about where the party is, while party state stays in Fantasy Grounds and is never stored in Campaign Manager.</title>
-<defs><marker id="d7-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d7-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d7-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d7-ar-rej" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-rej"/></marker></defs>
-<rect class="zone" x="20" y="20" width="520" height="282" rx="14"/>
-<text class="zt" x="40" y="50">CAMPAIGN MANAGER WEB APP</text>
-<line class="hair" x1="380" y1="68" x2="380" y2="284"/>
-<path class="caret" d="M40,81 l5,6 l5,-6"/>
-<text class="treet" x="56" y="90">Bethica</text>
-<path class="caret" d="M60,111 l5,6 l5,-6"/>
-<text class="treet" x="76" y="120">Rockmire region</text>
-<path class="caret" d="M80,141 l5,6 l5,-6"/>
-<text class="treet" x="96" y="150">town</text>
-<path class="caret" d="M100,171 l5,6 l5,-6"/>
-<text class="treet treet--here" x="116" y="180">The Rusty Lantern</text>
-<text class="lbl" x="254" y="180">(tavern)</text>
-<g class="p-cm"><rect class="chip7" x="116" y="200" width="110.5" height="24" rx="12"/><text class="chipt" x="171.2" y="216" text-anchor="middle">Bram, innkeeper</text></g>
-<g class="p-cm"><rect class="chip7" x="232.5" y="200" width="116.8" height="24" rx="12"/><text class="chipt" x="290.9" y="216" text-anchor="middle">two dock workers</text></g>
-<path class="caret caret--leaf" d="M100,256 l4,-4 l4,4 l-4,4 z"/>
-<text class="treet" x="116" y="261">market square</text>
-<text class="nm" x="398" y="94" font-size="18">Quests</text>
-<path class="gem gem--cm" d="M402,114 l4,4 l-4,4 l-4,-4 z"/><rect class="skel" x="414" y="114" width="104" height="8" rx="4"/>
-<path class="gem gem--cm" d="M402,144 l4,4 l-4,4 l-4,-4 z"/><rect class="skel" x="414" y="144" width="82" height="8" rx="4"/>
-<path class="gem gem--cm" d="M402,174 l4,4 l-4,4 l-4,-4 z"/><rect class="skel" x="414" y="174" width="116" height="8" rx="4"/>
-<path class="gem gem--cm" d="M402,204 l4,4 l-4,4 l-4,-4 z"/><rect class="skel" x="414" y="204" width="72" height="8" rx="4"/>
-<path class="gem gem--cm" d="M402,234 l4,4 l-4,4 l-4,-4 z"/><rect class="skel" x="414" y="234" width="94" height="8" rx="4"/>
-<path class="arrow p-cm" d="M280,304 L280,356" marker-end="url(#d7-ar-p-cm)"/>
-<rect class="pill" x="225.2" y="317.2" width="109.7" height="25.5" rx="9"/>
-<text class="pt" x="280" y="332.8" font-size="11.5" text-anchor="middle">the GM writes</text>
-<g class="p-cm">
-<path class="cyl" d="M120,380 L120,494 A160,18 0 0 0 440,494 L440,380 Z"/>
-<ellipse class="cyl-top" cx="280" cy="380" rx="160" ry="18"/>
-<text class="nm" x="280" y="430" font-size="23" text-anchor="middle">Campaign Manager</text>
-<text class="tx" x="280" y="456" font-size="14" text-anchor="middle">15 collections: worlds, places,</text>
-<text class="tx" x="280" y="476" font-size="14" text-anchor="middle">NPCs, items, adventures, quests</text>
-</g>
-<path class="cn flow p-cm" d="M280,516 L280,670" marker-end="url(#d7-ar-p-cm)"/>
-<circle class="dot p-cm" r="4.5"><animateMotion dur="1.6s" begin="-0.00s" repeatCount="indefinite" path="M280,516 L280,670"/></circle>
-<g class="ctx p-cm">
-<rect class="ctx-card" x="24" y="530" width="512" height="116" rx="8"/>
-<text class="role" x="42" y="556">CONTEXT CARD</text>
-<text class="pt pt--gold" x="518" y="556" font-size="11.5" text-anchor="end">every turn</text>
-<text class="ctxt" x="42" y="584">Where: The Rusty Lantern (tavern) in Rockmire.</text>
-<text class="ctxt" x="42" y="606">Nearby: market square.</text>
-<text class="ctxt" x="42" y="628">Here: Bram the innkeeper, two dock workers.</text>
-</g>
-<g class="p-cory">
-<rect class="breathe-p cory-glow" x="154" y="668" width="252" height="82" rx="14"/>
-<rect class="box" x="160" y="674" width="240" height="70" rx="10"/><rect class="rule" x="170" y="688" width="4" height="42" rx="2"/>
-<text class="nm" x="186" y="704" font-size="22">Cory</text><text class="tx" x="186" y="726">speaks with the card in hand</text>
-</g>
-<g class="p-fgu">
-<rect class="lane-z" x="20" y="772" width="520" height="94" rx="14"/>
-<rect class="box" x="36" y="784" width="254" height="70" rx="10"/><rect class="rule" x="46" y="798" width="4" height="42" rx="2"/>
-<text class="nm" x="62" y="808" font-size="19">Fantasy Grounds</text>
-<text class="tx" x="62" y="828" font-size="13">party state: hit points,</text>
-<text class="tx" x="62" y="845" font-size="13">sheets, the map</text>
-</g>
-<path class="blocked" d="M298,819 L348,819"/><path class="xmark" d="M317,813 L329,825 M329,813 L317,825"/>
-<text class="never" x="360" y="814">never stored in</text>
-<text class="never" x="360" y="834">Campaign Manager</text>
-</svg>
-<!-- D7:END -->
-              </div>
-              <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
-            </div>
-            <figcaption class="tech-cap">
-              <div class="tech-cap__text">
-              <p class="diagram-frame__cap">The GM writes the world once. The AI is handed it every turn.</p>
-              </div>
-              <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
-            </figcaption>
-          </figure>
-        </article>
-        <article class="tech-service p-library" aria-labelledby="h-dl">
-          <h3 id="h-dl">DragonLibrary, the rules library.</h3>
-          <p>D&amp;D 2024 rules content and thousands of Fantasy Grounds effect codes, the short strings that make Fantasy Grounds automate a spell or feature. A wrong code fails silently, so every code records whether its variants are alternatives (pick one) or parts (apply all), which Fantasy Grounds extensions it needs, and a trust tier from “generated” to “verified at a real table”. When a turn involves an effect, Cory fetches the codes first and keeps only the ones this table’s extensions support. A failed lookup is reported, not guessed.</p>
-          <figure class="diagram-frame tech-fig tech-fig--tl tech-fig--d6" id="d6" data-tech-anim>
-            <div class="diagram-frame__panel">
-              <div class="tech-scroll" tabindex="0" role="region" aria-label="Effect code diagram">
-<!-- D6:START -->
-<svg class="tech-svg" viewBox="0 0 560 900" role="img" aria-labelledby="d6-t" focusable="false">
-<title id="d6-t">A player casts Bless; Cory looks up the code in DragonLibrary, gets two alternative variants tagged with the Fantasy Grounds extensions they need and a trust tier, drops the one this table cannot load, sends the other to FGU Link as a ready command and gets a receipt back from Fantasy Grounds; a code made of parts is applied in full, in order.</title>
-<defs><marker id="d6-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d6-ar-p-library" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-library"/></marker><marker id="d6-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d6-ar-rej" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-rej"/></marker></defs>
-<g class="p-players rise-2">
-<rect class="bubble" x="20" y="18" width="200" height="44" rx="22"/><path class="bubble" d="M58,61 l-6,14 l18,-14"/>
-<text class="st" x="120" y="46" font-size="16" text-anchor="middle">“I cast Bless.”</text>
-</g>
-<g class="p-cory"><rect class="box" x="20" y="88" width="196" height="70" rx="10"/><rect class="rule" x="30" y="102" width="4" height="42" rx="2"/><text class="nm" x="46" y="118" font-size="22">Cory</text><text class="tx" x="46" y="140">AI game master</text></g>
-<g class="p-library"><rect class="box" x="344" y="88" width="196" height="70" rx="10"/><rect class="rule" x="354" y="102" width="4" height="42" rx="2"/><text class="nm" x="370" y="118" font-size="21">DragonLibrary</text><text class="tx" x="370" y="140">effect codes</text></g>
-<path class="arrow p-cory" d="M220,123 L340,123" marker-end="url(#d6-ar-p-cory)"/>
-<g class="in-8"><rect class="pill" x="252.0" y="91.0" width="56.0" height="26.0" rx="9"/>
-<text class="pt" x="280" y="107.0" font-size="12" text-anchor="middle">Bless</text></g>
-<circle class="token d6-ask p-cory" cx="226" cy="123" r="5.5"/>
-<path class="arrow p-library in-17" d="M520,162 L520,206" marker-end="url(#d6-ar-p-library)"/>
-<g class="in-24">
-<path class="brace" d="M30,204 v-8 h460 v8"/>
-<text class="note" x="260" y="186" text-anchor="middle">alternatives: pick one, two would double the effect</text>
-</g>
-<g class="rise-18"><g class="p-library">
-<rect class="card" x="20" y="214" width="250" height="132" rx="8"/>
-<text class="role" x="36" y="242">VARIANT A</text>
-<line class="hair" x1="36" y1="254" x2="254" y2="254"/>
-<text class="lbl" x="36" y="284">needs</text>
-<rect class="tag" x="96" y="268" width="43.6" height="22" rx="4"/>
-<text class="tagt" x="117.8" y="283" text-anchor="middle">CORE</text>
-<text class="lbl" x="36" y="322">tier</text>
-<rect class="tier" x="96" y="306" width="75.2" height="22" rx="11"/>
-<text class="tiert" x="133.6" y="321" text-anchor="middle">verified</text>
-</g></g>
-<g class="rise-21"><g class="cardb"><g class="p-library">
-<rect class="card" x="290" y="214" width="250" height="132" rx="8"/>
-<text class="role" x="306" y="242">VARIANT B</text>
-<line class="hair" x1="306" y1="254" x2="524" y2="254"/>
-<text class="lbl" x="306" y="284">needs</text>
-<rect class="tag" x="366" y="268" width="43.6" height="22" rx="4"/>
-<text class="tagt" x="387.8" y="283" text-anchor="middle">CORE</text>
-<text class="lbl" x="417.6" y="284">+</text>
-<rect class="tag" x="431.6" y="268" width="43.6" height="22" rx="4"/>
-<text class="tagt" x="453.4" y="283" text-anchor="middle">BCEG</text>
-<text class="lbl" x="306" y="322">tier</text>
-<rect class="tier" x="366" y="306" width="89.0" height="22" rx="11"/>
-<text class="tiert" x="410.5" y="321" text-anchor="middle">documented</text>
-</g></g></g>
-<g class="in-32">
-<path class="arrow p-library" d="M145,350 L145,384"/>
-<path class="arrow p-library" d="M415,350 L415,384"/>
-</g>
-<g class="p-cory in-34">
-<rect class="filter" x="20" y="386" width="520" height="44" rx="8"/>
-<text class="filt" x="280" y="414" text-anchor="middle">this table loads: CORE</text>
-</g>
-<g class="in-41">
-<circle class="xdisc" cx="500" cy="408" r="12"/><path class="xmark" d="M495,403 L505,413 M505,403 L495,413"/>
-<text class="badt" x="415" y="452" font-size="13" text-anchor="middle">needs BCEG: not loaded, dropped</text>
-</g>
-<path class="arrow p-cory in-46" d="M145,432 L145,470" marker-end="url(#d6-ar-p-cory)"/>
-<g class="p-cory rise-48">
-<rect class="cmd" x="20" y="474" width="520" height="40" rx="8"/>
-<text class="cmdt" x="280" y="499" text-anchor="middle">APPLY_TIMED_EFFECT: Bless; SAVE: 1d4, 10 rounds</text>
-</g>
-<path class="arrow p-fgu in-54" d="M145,516 L145,552" marker-end="url(#d6-ar-p-fgu)"/>
-<g class="p-fgu"><rect class="box" x="20" y="556" width="250" height="70" rx="10"/><rect class="rule" x="30" y="570" width="4" height="42" rx="2"/><text class="nm" x="46" y="586" font-size="21">FGU Link</text><text class="tx" x="46" y="608">runs it in Fantasy Grounds</text></g>
-<path class="arrow p-fgu in-60" d="M274,591 L318,591" marker-end="url(#d6-ar-p-fgu)"/>
-<g class="p-fgu stamp">
-<g transform="rotate(-5 428 591)">
-<rect class="stamp-o" x="326" y="560" width="204" height="62" rx="6"/><rect class="stamp-i" x="332" y="566" width="192" height="50" rx="4"/>
-<text class="stampt" x="428" y="590" text-anchor="middle">RECEIPT</text>
-<text class="pt" x="428" y="608" font-size="11" text-anchor="middle">from Fantasy Grounds</text>
-</g></g>
-<line class="rulel" x1="20" y1="660" x2="540" y2="660"/>
-<text class="zt in-68" x="20" y="690">ANOTHER CODE, MADE OF PARTS</text>
-<g class="p-library rise-70">
-<rect class="card" x="20" y="706" width="520" height="104" rx="8"/>
-<text class="role" x="36" y="732">PARTS</text>
-<g class="part-seg in-74"><rect class="seg" x="40" y="746" width="220" height="48" rx="6"/><circle class="segn" cx="66" cy="770" r="12"/><text class="segnt" x="66" y="774.5" text-anchor="middle">1</text><text class="tagt" x="88" y="775">part 1</text></g>
-<g class="part-seg in-80"><rect class="seg" x="300" y="746" width="220" height="48" rx="6"/><circle class="segn" cx="326" cy="770" r="12"/><text class="segnt" x="326" y="774.5" text-anchor="middle">2</text><text class="tagt" x="348" y="775">part 2</text></g>
-<path class="arrow p-library in-77" d="M262,770 L296,770" marker-end="url(#d6-ar-p-library)"/>
-</g>
-<text class="note in-82" x="280" y="836" text-anchor="middle">components: apply all, in order</text>
-<text class="lbl" x="20" y="879">trust tiers</text>
-<rect class="tier tier--legend" x="108.0" y="864" width="70.8" height="22" rx="11"/>
-<text class="tiert tiert--legend" x="143.4" y="879" text-anchor="middle">verified</text>
-<rect class="tier tier--legend" x="186.8" y="864" width="84.0" height="22" rx="11"/>
-<text class="tiert tiert--legend" x="228.8" y="879" text-anchor="middle">documented</text>
-<rect class="tier tier--legend" x="278.8" y="864" width="97.2" height="22" rx="11"/>
-<text class="tiert tiert--legend" x="327.4" y="879" text-anchor="middle">undocumented</text>
-<rect class="tier tier--legend" x="384.0" y="864" width="77.4" height="22" rx="11"/>
-<text class="tiert tiert--legend" x="422.7" y="879" text-anchor="middle">generated</text>
-</svg>
-<!-- D6:END -->
-              </div>
-              <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
-            </div>
-            <figcaption class="tech-cap">
-              <div class="tech-cap__text">
-              <p class="diagram-frame__cap">Looked up, matched to the table, receipted. A failed lookup is reported, not guessed.</p>
-              </div>
-              <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
-            </figcaption>
-          </figure>
-        </article>
+      <p class="cp-body">Cory keeps the live state of each campaign in its own database. Campaign Manager holds the world: places, people and quests, written by the GM in a web app and handed to the AI game master every turn. DragonLibrary holds D&amp;D 2024 rules content and Fantasy Grounds effect codes, looked up rather than guessed. Both run on PocketBase, and Cory uses SQLite.</p>
+    </div>
+  </section>
+
+  <!-- Fantasy Grounds is optional -->
+  <section class="section co-section co-section--tint tech-sec" aria-labelledby="h-fg">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-fg">Fantasy Grounds is optional</h2>
       </div>
+      <p class="cp-body">Fantasy Grounds Unity handles the mechanical crunch, inventories and character sheets, and works much like a database of the game. DragonSpire does not own or control it; FGU Link is the bridge, a small program that connects to Fantasy Grounds’ API on the copy running on your own computer. You can also play a lighter, less crunchy version in the web browser alone.</p>
+    </div>
+  </section>
+
+  <!-- One container per campaign -->
+  <section class="section co-section tech-sec" aria-labelledby="h-container">
+    <div class="container co-stack">
+      <div class="section-head">
+        <h2 id="h-container">One container per campaign</h2>
+      </div>
+      <p class="cp-body">Cory runs in its own Docker container for each campaign, which keeps campaigns separate from each other.</p>
     </div>
   </section>
 
@@ -560,353 +391,6 @@
       </figure>
     </div>
   </section>
-
-  <!-- D4: where the truth lives -->
-  <section class="section co-section tech-sec" aria-labelledby="h-truth">
-    <div class="container co-stack">
-      <div class="section-head">
-        <h2 id="h-truth">Where the truth lives</h2>
-      </div>
-      <figure class="diagram-frame tech-fig tech-fig--d4" id="d4" data-tech-anim>
-        <div class="diagram-frame__panel">
-          <div class="tech-scroll" tabindex="0" role="region" aria-label="Where the truth lives diagram">
-<!-- D4:START -->
-<svg class="tech-svg" viewBox="0 0 1200 660" role="img" aria-labelledby="d4-t" focusable="false">
-<title id="d4-t">Where the truth lives: the AI model, for narration and judging what a player meant, stands on four foundations that hand it the facts before it speaks: game state in Fantasy Grounds, world memory in Campaign Manager, rules content in DragonLibrary, and pacing in tested Python code; its commands go down to Fantasy Grounds, checked and receipted.</title>
-<defs><marker id="d4-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d4-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d4-ar-p-library" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-library"/></marker><marker id="d4-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d4-ar-p-models" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-models"/></marker><marker id="d4-ar-rej" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-rej"/></marker></defs>
-<line class="span" x1="136" y1="262" x2="1014" y2="262"/>
-<path class="cn flow p-fgu" d="M136,334 L136,156" marker-end="url(#d4-ar-p-fgu)"/>
-<circle class="dot p-fgu" r="4.5"><animateMotion dur="2.4s" begin="-0.00s" repeatCount="indefinite" path="M136,334 L136,156"/></circle>
-<path class="cn flow p-cm" d="M462,334 L462,156" marker-end="url(#d4-ar-p-cm)"/>
-<circle class="dot p-cm" r="4.5"><animateMotion dur="2.4s" begin="-0.60s" repeatCount="indefinite" path="M462,334 L462,156"/></circle>
-<path class="cn flow p-library" d="M738,334 L738,156" marker-end="url(#d4-ar-p-library)"/>
-<circle class="dot p-library" r="4.5"><animateMotion dur="2.4s" begin="-1.20s" repeatCount="indefinite" path="M738,334 L738,156"/></circle>
-<path class="cn flow p-cory" d="M1014,334 L1014,156" marker-end="url(#d4-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5"><animateMotion dur="2.4s" begin="-1.80s" repeatCount="indefinite" path="M1014,334 L1014,156"/></circle>
-<path class="arrow p-models" d="M236,152 L236,330" marker-end="url(#d4-ar-p-models)"/>
-<circle class="dot p-models" r="4.5"><animateMotion dur="2.4s" begin="-1.30s" repeatCount="indefinite" path="M236,152 L236,330"/></circle>
-<rect class="pill" x="457.4" y="248.5" width="285.2" height="27.0" rx="9"/>
-<text class="pt" x="600" y="265.5" font-size="13" text-anchor="middle">facts handed over before it speaks</text>
-<rect class="pill" x="245.7" y="178.0" width="152.6" height="44.0" rx="9"/>
-<text class="pt" x="322" y="195.0" font-size="13" text-anchor="middle">commands, checked</text>
-<text class="pt" x="322" y="212.0" font-size="13" text-anchor="middle">and receipted</text>
-<g class="p-models">
-<rect class="breathe-p" x="54" y="30" width="1092" height="124" rx="16"/>
-<rect class="box band" x="60" y="36" width="1080" height="112" rx="14"/>
-<text class="nm" x="600" y="86" font-size="32" text-anchor="middle">AI model</text>
-<text class="tx" x="600" y="120" font-size="17" text-anchor="middle">narration, judging what a player meant</text>
-</g>
-<g class="p-fgu">
-<rect class="box blk" x="60" y="340" width="252" height="214" rx="10"/>
-<rect class="rule" x="60" y="340" width="252" height="7" rx="3"/>
-<text class="role" x="82" y="384">GAME STATE</text>
-<text class="nm" x="82" y="420" font-size="24">Fantasy Grounds</text>
-<text class="tx" x="82" y="454" font-size="16">combat tracker,</text>
-<text class="tx" x="82" y="477" font-size="16">sheets, map</text>
-</g>
-<g class="p-cm">
-<rect class="box blk" x="336" y="340" width="252" height="214" rx="10"/>
-<rect class="rule" x="336" y="340" width="252" height="7" rx="3"/>
-<text class="role" x="358" y="384">WORLD MEMORY</text>
-<text class="nm" x="358" y="420" font-size="24">Campaign Manager</text>
-<text class="tx" x="358" y="454" font-size="16">places, NPCs, quests</text>
-</g>
-<g class="p-library">
-<rect class="box blk" x="612" y="340" width="252" height="214" rx="10"/>
-<rect class="rule" x="612" y="340" width="252" height="7" rx="3"/>
-<text class="role" x="634" y="384">RULES CONTENT</text>
-<text class="nm" x="634" y="420" font-size="24">DragonLibrary</text>
-<text class="tx" x="634" y="454" font-size="16">effect codes,</text>
-<text class="tx" x="634" y="477" font-size="16">5E ruleset</text>
-</g>
-<g class="p-cory">
-<rect class="box blk" x="888" y="340" width="252" height="214" rx="10"/>
-<rect class="rule" x="888" y="340" width="252" height="7" rx="3"/>
-<text class="role" x="910" y="384">PACING</text>
-<text class="nm" x="910" y="420" font-size="24">Tested Python code</text>
-<text class="tx" x="910" y="454" font-size="16">never rolls for players,</text>
-<text class="tx" x="910" y="477" font-size="16">turn order, loot rules</text>
-</g>
-<line class="plinth" x1="40" y1="578" x2="1160" y2="578"/>
-<path class="gem" d="M40,572 l6,6 l-6,6 l-6,-6 z"/><path class="gem" d="M1160,572 l6,6 l-6,6 l-6,-6 z"/>
-<text class="say" x="600" y="628" text-anchor="middle">The model is told the facts. It is never trusted to remember them.</text>
-</svg>
-<!-- D4:END -->
-          </div>
-          <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
-        </div>
-        <figcaption class="tech-cap">
-          <div class="tech-cap__text">
-          <p class="diagram-frame__cap">Narration and judgement come from the model; game state comes from Fantasy Grounds; world memory from Campaign Manager; rules content from DragonLibrary; pacing from tested code. The model is given the facts before it speaks, instead of being trusted to remember them.</p>
-          </div>
-          <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- D3: hexagonal architecture -->
-  <section class="section co-section co-section--tint tech-sec" aria-labelledby="h-hex">
-    <div class="container tech-hex">
-      <div class="tech-hex__text">
-        <h2 id="h-hex">Hexagonal architecture</h2>
-        <p>Cory follows ports and adapters. The core holds the game rules (combat and initiative, party, location and scene, dice, spell slots) and imports only the Python standard library. It reaches databases, AI models, Discord and Fantasy Grounds only through ports, and one composition root wires the adapters in. So a model, a database or a voice engine can be swapped without touching the rules, and the rules can be tested without any of them.</p>
-        <div class="tech-swap">
-          <button class="tech-swap__btn" type="button" id="d3-swap" aria-pressed="false" aria-controls="d3"><span class="tech-swap__track" aria-hidden="true"><span class="tech-swap__knob"></span></span>Swap the model</button>
-          <p class="tech-swap__state mono" id="d3-state" aria-live="polite">Model adapter: Gemini. Core: unchanged.</p>
-        </div>
-      </div>
-      <figure class="diagram-frame tech-fig tech-fig--d3" id="d3" data-tech-anim>
-        <div class="diagram-frame__panel">
-          <div class="tech-scroll" tabindex="0" role="region" aria-label="Hexagonal architecture diagram">
-<!-- D3:START -->
-<svg class="tech-svg" viewBox="0 0 1200 820" role="img" aria-labelledby="d3-t" focusable="false">
-<title id="d3-t">Cory's hexagonal architecture: a core of game rules that uses only the Python standard library, called by four driving adapters and reaching storage, AI models, Fantasy Grounds and voice only through seven groups of ports, with one composition root installing the adapters.</title>
-<defs><marker id="d3-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d3-ar-p-dee" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-dee"/></marker><marker id="d3-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d3-ar-p-models" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-models"/></marker><marker id="d3-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d3-ar-p-players" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-players"/></marker><clipPath id="d3-clip"><rect x="926" y="60" width="260" height="660"/></clipPath></defs>
-<text class="zt" x="157" y="196" text-anchor="middle">DRIVING ADAPTERS</text>
-<text class="zsub" x="157" y="214" text-anchor="middle">call into the core</text>
-<text class="zt" x="826" y="84" text-anchor="middle">PORTS</text>
-<text class="zt" x="1050" y="76" text-anchor="middle">DRIVEN ADAPTERS</text>
-<text class="zsub" x="1050" y="94" text-anchor="middle">implement the ports</text>
-<path class="cn flow p-players" d="M282,270 L399,283" marker-end="url(#d3-ar-p-players)"/>
-<circle class="dot p-players" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.6s" begin="-0.0s" repeatCount="indefinite" path="M282,270 L399,283"/></circle>
-<path class="cn flow p-players" d="M282,362 L365,366" marker-end="url(#d3-ar-p-players)"/>
-<circle class="dot p-players" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.6s" begin="-0.5s" repeatCount="indefinite" path="M282,362 L365,366"/></circle>
-<path class="cn flow p-players" d="M282,454 L365,440" marker-end="url(#d3-ar-p-players)"/>
-<circle class="dot p-players" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.6s" begin="-1.0s" repeatCount="indefinite" path="M282,454 L365,440"/></circle>
-<path class="cn flow p-players" d="M282,546 L399,523" marker-end="url(#d3-ar-p-players)"/>
-<circle class="dot p-players" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.6s" begin="-1.5s" repeatCount="indefinite" path="M282,546 L399,523"/></circle>
-<path class="cn flow p-cory" d="M657.8,271 L750,140" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-0.0s" repeatCount="indefinite" path="M657.8,271 L750,140"/></circle>
-<path class="cn flow p-cm" d="M900,140 L928,140" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cory" d="M713.2,315 L750,226" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-0.2s" repeatCount="indefinite" path="M713.2,315 L750,226"/></circle>
-<path class="cn flow p-cm" d="M900,226 L928,226" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cory" d="M713.2,359 L750,312" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-0.4s" repeatCount="indefinite" path="M713.2,359 L750,312"/></circle>
-<path class="cn flow p-cm" d="M900,312 L928,312" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cory" d="M713.2,403 L750,398" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-0.6s" repeatCount="indefinite" path="M713.2,403 L750,398"/></circle>
-<path class="cn flow p-cm" d="M900,398 L928,398" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cory" d="M713.2,447 L750,484" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-0.8s" repeatCount="indefinite" path="M713.2,447 L750,484"/></circle>
-<path class="cn flow p-cm" d="M900,484 L928,484" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cory" d="M713.2,491 L750,570" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-1.0s" repeatCount="indefinite" path="M713.2,491 L750,570"/></circle>
-<path class="cn flow p-cm" d="M900,570 L928,570" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cory" d="M657.8,535 L750,656" marker-end="url(#d3-ar-p-cory)"/>
-<circle class="dot p-cory" r="4.5" style="--dot:var(--part)"><animateMotion dur="1.4s" begin="-1.2s" repeatCount="indefinite" path="M657.8,535 L750,656"/></circle>
-<path class="cn flow p-cm" d="M900,656 L928,656" marker-end="url(#d3-ar-p-cm)"/>
-<path class="cn flow p-cm" d="M540,684 L540,606" marker-end="url(#d3-ar-p-cm)"/>
-<text class="zsub" x="552" y="650">installs the adapters</text>
-<polygon class="hex-ports" points="540.0,203.0 713.2,303.0 713.2,503.0 540.0,603.0 366.8,503.0 366.8,303.0"/>
-<polygon class="hex-glow" points="540.0,253.0 669.9,328.0 669.9,478.0 540.0,553.0 410.1,478.0 410.1,328.0"/>
-<polygon class="hex-core" points="540.0,253.0 669.9,328.0 669.9,478.0 540.0,553.0 410.1,478.0 410.1,328.0"/>
-<text class="hexlbl" x="540" y="231" text-anchor="middle">PORTS</text>
-<text class="nm" x="540" y="318" font-size="30" text-anchor="middle">Core</text>
-<text class="zsub" x="540" y="340" text-anchor="middle">src/core · standard library only</text>
-<text class="tx core-t" x="540" y="376" text-anchor="middle">combat and initiative</text>
-<text class="tx core-t" x="540" y="400" text-anchor="middle">party and claims</text>
-<text class="tx core-t" x="540" y="424" text-anchor="middle">location and scene</text>
-<text class="tx core-t" x="540" y="448" text-anchor="middle">dice engine</text>
-<text class="tx core-t" x="540" y="472" text-anchor="middle">spell slots</text>
-<g class="p-players">
-<rect class="box" x="32" y="232" width="250" height="76" rx="10"/>
-<rect class="rule" x="42" y="246" width="4" height="48" rx="2"/>
-<text class="nm" x="58" y="264" font-size="19">Web and API routers</text>
-<text class="tx" x="58" y="290">adapters/api</text>
-</g>
-<g class="p-players">
-<rect class="box" x="32" y="324" width="250" height="76" rx="10"/>
-<rect class="rule" x="42" y="338" width="4" height="48" rx="2"/>
-<text class="nm" x="58" y="356" font-size="19">Engine loop</text>
-<text class="tx" x="58" y="382">main_loop.py</text>
-</g>
-<g class="p-players">
-<rect class="box" x="32" y="416" width="250" height="76" rx="10"/>
-<rect class="rule" x="42" y="430" width="4" height="48" rx="2"/>
-<text class="nm" x="58" y="448" font-size="19">FGU Link router</text>
-<text class="tx" x="58" y="474">Fantasy Grounds, WebSocket</text>
-</g>
-<g class="p-players">
-<rect class="box" x="32" y="508" width="250" height="76" rx="10"/>
-<rect class="rule" x="42" y="522" width="4" height="48" rx="2"/>
-<text class="nm" x="58" y="540" font-size="19">Dee Emma router</text>
-<text class="tx" x="58" y="566">Discord voice, WebSocket</text>
-</g>
-<g class="p-cory"><rect class="chip" x="752" y="114.0" width="148" height="52" rx="7"/>
-<text class="ct" x="826" y="135.5" text-anchor="middle">GameStore</text>
-<text class="ct" x="826" y="152.5" text-anchor="middle">EngineStatePort</text>
-</g>
-<g class="p-cm "><rect class="box" x="930" y="110" width="240" height="60" rx="10"/><rect class="rule" x="940" y="122" width="4" height="36" rx="2"/><text class="nm" x="956" y="137" font-size="18">SQLite game store</text><text class="tx" x="956" y="157" font-size="12.5">campaign data</text></g>
-<g class="p-cory"><rect class="chip" x="752" y="209.0" width="148" height="34" rx="7"/>
-<text class="ct" x="826" y="230.0" text-anchor="middle">CampaignRepository</text>
-</g>
-<g class="p-cm "><rect class="box" x="930" y="196" width="240" height="60" rx="10"/><rect class="rule" x="940" y="208" width="4" height="36" rx="2"/><text class="nm" x="956" y="223" font-size="18">Campaign Manager</text><text class="tx" x="956" y="243" font-size="12.5">PocketBase</text></g>
-<g class="p-cory"><rect class="chip" x="752" y="286.0" width="148" height="52" rx="7"/>
-<text class="ct" x="826" y="307.5" text-anchor="middle">JudgementModel</text>
-<text class="ct" x="826" y="324.5" text-anchor="middle">SpeechToText</text>
-</g>
-<g clip-path="url(#d3-clip)">
-<g class="p-cm swap swap--gemini"><rect class="box" x="930" y="282" width="240" height="60" rx="10"/><rect class="rule" x="940" y="294" width="4" height="36" rx="2"/><text class="nm" x="956" y="309" font-size="18">Gemini adapters</text><text class="tx" x="956" y="329" font-size="12.5">game master, speech to text</text></g>
-<g class="p-cm swap swap--other"><rect class="box" x="930" y="282" width="240" height="60" rx="10"/><rect class="rule" x="940" y="294" width="4" height="36" rx="2"/><text class="nm" x="956" y="309" font-size="18">Another model</text><text class="tx" x="956" y="329" font-size="12.5">same ports, core untouched</text></g>
-</g>
-<g class="p-cory"><rect class="chip" x="752" y="372.0" width="148" height="52" rx="7"/>
-<text class="ct" x="826" y="393.5" text-anchor="middle">TableEvents</text>
-<text class="ct" x="826" y="410.5" text-anchor="middle">GmScreen</text>
-</g>
-<g class="p-cm "><rect class="box" x="930" y="368" width="240" height="60" rx="10"/><rect class="rule" x="940" y="380" width="4" height="36" rx="2"/><text class="nm" x="956" y="404" font-size="18">Table events</text></g>
-<g class="p-cory"><rect class="chip" x="752" y="467.0" width="148" height="34" rx="7"/>
-<text class="ct" x="826" y="488.0" text-anchor="middle">PartyRoster</text>
-</g>
-<g class="p-cm "><rect class="box" x="930" y="454" width="240" height="60" rx="10"/><rect class="rule" x="940" y="466" width="4" height="36" rx="2"/><text class="nm" x="956" y="481" font-size="18">Party roster</text><text class="tx" x="956" y="501" font-size="12.5">Fantasy Grounds party sheet</text></g>
-<g class="p-cory"><rect class="chip" x="752" y="544.0" width="148" height="52" rx="7"/>
-<text class="ct" x="826" y="565.5" text-anchor="middle">ConfigurationPort</text>
-<text class="ct" x="826" y="582.5" text-anchor="middle">UserDirectory</text>
-</g>
-<g class="p-cm "><rect class="box" x="930" y="540" width="240" height="60" rx="10"/><rect class="rule" x="940" y="552" width="4" height="36" rx="2"/><text class="nm" x="956" y="576" font-size="18">Settings</text></g>
-<g class="p-cory"><rect class="chip" x="752" y="630.0" width="148" height="52" rx="7"/>
-<text class="ct" x="826" y="651.5" text-anchor="middle">ToolExecutor</text>
-<text class="ct" x="826" y="668.5" text-anchor="middle">VoiceEnginePort</text>
-</g>
-<g class="p-cm "><rect class="box" x="930" y="626" width="240" height="60" rx="10"/><rect class="rule" x="940" y="638" width="4" height="36" rx="2"/><text class="nm" x="956" y="653" font-size="18">Tools and voice</text><text class="tx" x="956" y="673" font-size="12.5">FGU Link; Kokoro voice</text></g>
-<g class="p-cm">
-<rect class="box" x="390" y="684" width="300" height="70" rx="10"/>
-<rect class="rule" x="400" y="698" width="4" height="42" rx="2"/>
-<text class="nm" x="416" y="716" font-size="19">Composition root</text>
-<text class="tx" x="416" y="738">config/dependencies.py: wire()</text>
-</g>
-<text class="foot" x="600" y="796" text-anchor="middle">Checked on every push by tests: the core imports only the standard library, and only listed adapters may call a model.</text>
-</svg>
-<!-- D3:END -->
-          </div>
-          <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
-        </div>
-        <figcaption class="tech-cap">
-          <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- D5: knowledge push -->
-  <section class="section co-section tech-sec" aria-labelledby="h-push">
-    <div class="container tech-split">
-      <div class="tech-split__text">
-        <h2 id="h-push">The tabletop defines the AI’s abilities</h2>
-        <p>Each time FGU Link connects, it sends Cory the full list of 92 Fantasy Grounds actions and 42 skills. Cory’s tool list is built from it. A new procedure is a Markdown skill file, and a lint step rejects any skill that names an action the engine does not implement.</p>
-      </div>
-      <figure class="diagram-frame tech-fig tech-fig--tl tech-fig--d5" id="d5" data-tech-anim>
-        <div class="diagram-frame__panel">
-          <div class="tech-scroll" tabindex="0" role="region" aria-label="Knowledge push diagram">
-<!-- D5:START -->
-<svg class="tech-svg" viewBox="0 0 640 600" role="img" aria-labelledby="d5-t" focusable="false">
-<title id="d5-t">On every connect, FGU Link sends Cory a stack of 92 Fantasy Grounds actions and 42 skills over the WebSocket, and it becomes Cory's tool list; a new skill file passes the skill lint, while one naming an unknown action is rejected.</title>
-<defs><marker id="d5-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d5-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d5-ar-rej" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-rej"/></marker></defs>
-<path class="cn flow p-fgu" d="M234,165 L404,165" marker-end="url(#d5-ar-p-fgu)"/>
-<circle class="dot p-fgu" r="4.5"><animateMotion dur="2.0s" begin="-0.00s" repeatCount="indefinite" path="M234,165 L404,165"/></circle>
-<rect class="pill" x="253.8" y="107.5" width="130.4" height="41.0" rx="9"/>
-<text class="pt" x="319" y="123.1" font-size="11.5" text-anchor="middle">WebSocket,</text>
-<text class="pt" x="319" y="138.6" font-size="11.5" text-anchor="middle">on every connect</text>
-<g class="p-fgu">
-<rect class="box" x="20" y="24" width="214" height="252" rx="10"/>
-<text class="nm" x="40" y="58" font-size="21">Fantasy Grounds</text>
-<text class="tx" x="40" y="80">with FGU Link</text>
-<rect class="card card--back" x="48" y="112" width="154" height="50" rx="7"/>
-<rect class="card card--back" x="44" y="108" width="154" height="50" rx="7"/>
-<rect class="card" x="40" y="104" width="154" height="50" rx="7"/>
-<text class="cardn" x="58" y="137">92</text>
-<text class="tx" x="96" y="135" font-size="15">actions</text>
-<rect class="card card--back" x="48" y="178" width="154" height="50" rx="7"/>
-<rect class="card card--back" x="44" y="174" width="154" height="50" rx="7"/>
-<rect class="card" x="40" y="170" width="154" height="50" rx="7"/>
-<text class="cardn" x="58" y="203">42</text>
-<text class="tx" x="96" y="201" font-size="15">skills</text>
-</g>
-<g class="p-cory">
-<rect class="box" x="406" y="24" width="214" height="252" rx="10"/>
-<text class="nm" x="426" y="58" font-size="21">Cory</text>
-<text class="tx" x="426" y="80">tool list</text>
-<text class="rowh row" style="animation-delay:0.00s" x="426" y="118">92 actions</text>
-<rect class="bar row" style="animation-delay:0.14s" x="426" y="126" width="150" height="8" rx="4"/>
-<rect class="bar row" style="animation-delay:0.28s" x="426" y="142" width="118" height="8" rx="4"/>
-<rect class="bar row" style="animation-delay:0.42s" x="426" y="158" width="136" height="8" rx="4"/>
-<rect class="bar row" style="animation-delay:0.56s" x="426" y="174" width="96" height="8" rx="4"/>
-<text class="rowh row" style="animation-delay:0.70s" x="426" y="206">42 skills</text>
-<rect class="bar row" style="animation-delay:0.84s" x="426" y="214" width="128" height="8" rx="4"/>
-<rect class="bar row" style="animation-delay:0.98s" x="426" y="230" width="104" height="8" rx="4"/>
-<rect class="bar row" style="animation-delay:1.12s" x="426" y="246" width="142" height="8" rx="4"/>
-</g>
-<g class="p-fgu fly"><rect class="card card--back" x="48" y="112" width="154" height="50" rx="7"/>
-<rect class="card card--back" x="44" y="108" width="154" height="50" rx="7"/>
-<rect class="card" x="40" y="104" width="154" height="50" rx="7"/>
-<text class="cardn" x="58" y="137">92</text>
-<text class="tx" x="96" y="135" font-size="15">actions</text>
-<rect class="card card--back" x="48" y="178" width="154" height="50" rx="7"/>
-<rect class="card card--back" x="44" y="174" width="154" height="50" rx="7"/>
-<rect class="card" x="40" y="170" width="154" height="50" rx="7"/>
-<text class="cardn" x="58" y="203">42</text>
-<text class="tx" x="96" y="201" font-size="15">skills</text></g>
-<text class="zt" x="20" y="330">NEW PROCEDURE</text>
-<path class="arrow p-cory in-66" d="M520,366 L520,282" marker-end="url(#d5-ar-p-cory)"/>
-<g class="bad-card p-players">
-<path class="doc" d="M90,476 h150 l18,18 v48 h-168 z"/><path class="doc-fold" d="M240,476 v18 h18"/>
-<g class="bad-on">
-<path class="doc doc--bad" d="M90,476 h150 l18,18 v48 h-168 z"/>
-<path class="xmark" d="M238,520 L250,532 M250,520 L238,532"/>
-</g>
-<text class="pt" x="104" y="504" font-size="12">skill file</text>
-<text class="badt" x="104" y="526" font-size="12.5">unknown action</text>
-</g>
-<g class="bad-on">
-<path class="arrow-rej" d="M290,494 C290,460 272,456 262,470" marker-end="url(#d5-ar-rej)"/>
-<text class="badt" x="174" y="566" font-size="13" text-anchor="middle">rejected</text>
-</g>
-<g class="good-card p-players">
-<path class="doc" d="M440,372 h126 l18,18 v48 h-144 z"/><path class="doc-fold" d="M566,372 v18 h18"/>
-<text class="pt" x="454" y="400" font-size="12.5">new_skill.md</text>
-<text class="tx" x="454" y="423" font-size="13">Markdown</text>
-</g>
-<g class="in-64"><path class="tickmark" d="M468,456 L472.0,460.2 L480,451.8"/><text class="okt" x="488" y="461" font-size="13">passes</text></g>
-<g class="p-cory">
-<rect class="gate" x="296" y="352" width="12" height="226" rx="4"/>
-<rect class="gate-flash" x="290" y="352" width="24" height="226" rx="6"/>
-</g>
-<rect class="pill pill--gold" x="171.2" y="339.2" width="261.5" height="25.5" rx="9"/>
-<text class="pt pt--gold" x="302" y="354.8" font-size="11.5" text-anchor="middle">skill lint: every action must exist</text>
-</svg>
-<!-- D5:END -->
-          </div>
-          <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
-        </div>
-        <figcaption class="tech-cap">
-          <div class="tech-cap__text">
-          <p class="diagram-frame__cap">Fantasy Grounds, not Cory’s code, defines what the AI can do there.</p>
-          </div>
-          <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Engineering discipline -->
-  <section class="section co-section co-section--tint tech-sec" id="discipline" aria-labelledby="h-discipline">
-    <div class="container co-stack">
-      <div class="section-head">
-        <h2 id="h-discipline">Engineering discipline</h2>
-      </div>
-      <div class="tech-disc">
-        <ul class="tech-rules">
-          <li>Automated tests and build gates on every push.</li>
-          <li>Architecture tests fail the build if the core imports an outside library, or if any file not on an approved list calls an AI model.</li>
-          <li>Every Fantasy Grounds command passes a validator before it runs, and returns a receipt after.</li>
-          <li>One authenticated WebSocket between the GM’s PC and the cloud, with sequence numbers and resend after a reconnect, so nothing is lost when the connection drops.</li>
-          <li>Model use is configured per job (game master, scene judge, voice gate, transcription, images), each with a primary, a backup and a timeout. A missing key means unavailable, never borrowed.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <!-- SHELL: footer (copy to every page unchanged) -->
