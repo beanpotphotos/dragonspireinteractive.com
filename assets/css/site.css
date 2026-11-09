@@ -578,6 +578,7 @@ main { display: block; }
 .cp-founder__text p:not(.eyebrow) { font-size: 1.125rem; line-height: 1.7; max-width: 64ch; }
 .cp-portrait { margin: 0; width: 160px; aspect-ratio: 1; }
 .cp-portrait svg { display: block; width: 100%; height: 100%; }
+.cp-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 1.5px solid var(--gold); }
 .cp-portrait__ring { fill: var(--panel); stroke: var(--gold); stroke-width: 1.5; }
 .cp-portrait__ring--in { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 4; }
 .cp-portrait__hex { fill: none; stroke: var(--gold); stroke-width: 1.2; opacity: 0.55; }
