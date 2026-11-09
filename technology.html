@@ -462,8 +462,8 @@
         <div class="diagram-frame__panel">
           <div class="tech-scroll" tabindex="0" role="region" aria-label="Turn diagram">
 <!-- D2:START -->
-<svg class="tech-svg" viewBox="0 0 1200 980" role="img" aria-labelledby="d2-t" focusable="false">
-<title id="d2-t">One turn in thirteen steps across five lanes: a player in Discord says “I swing my axe at the goblin.”, Dee Emma, Cory, the FGU Link daemon and Fantasy Grounds pass it along and roll it, and Dee Emma answers “Your axe bites deep.”, with the Fantasy Grounds receipt back in 0.07 to 0.16 seconds.</title>
+<svg class="tech-svg" viewBox="0 0 1200 900" role="img" aria-labelledby="d2-t" focusable="false">
+<title id="d2-t">One turn in thirteen steps across five lanes: a player in Discord says “I swing my axe at the goblin.”, Dee Emma, Cory, the FGU Link daemon and Fantasy Grounds pass it along and roll it, and Dee Emma answers “Your axe bites deep.”, with the Fantasy Grounds receipt coming back.</title>
 <defs><marker id="d2-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d2-ar-p-dee" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-dee"/></marker><marker id="d2-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d2-ar-p-models" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-models"/></marker><marker id="d2-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d2-ar-p-players" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-players"/></marker></defs>
 <g class="p-players"><line class="lane" x1="130" y1="104" x2="130" y2="892"/><rect class="box" x="26" y="34" width="208" height="70" rx="10"/><text class="nm" x="130" y="64" font-size="21" text-anchor="middle">Player</text><text class="tx" x="130" y="87" text-anchor="middle" font-size="12.5">in Discord</text></g>
 <g class="p-dee"><line class="lane" x1="365" y1="104" x2="365" y2="892"/><rect class="box" x="261" y="34" width="208" height="70" rx="10"/><text class="nm" x="365" y="64" font-size="21" text-anchor="middle">Dee Emma</text><text class="tx" x="365" y="87" text-anchor="middle" font-size="12.5">Discord voice</text></g>
@@ -527,7 +527,7 @@
 <g class="step p-fgu" data-step="10">
 <circle class="num" cx="34" cy="682" r="13"/><text class="numt" x="34" y="686.5" text-anchor="middle">10</text>
 <path class="arrow" d="M829,682 L606,682" marker-end="url(#d2-ar-p-fgu)"/>
-<text class="st" x="717.5" y="672" text-anchor="middle">receipt (0.07 to 0.16 s)</text>
+<text class="st" x="717.5" y="672" text-anchor="middle">receipt</text>
 <circle class="token" cx="829" cy="682" r="5.5" style="--dx:-223px"/>
 </g>
 <g class="step p-cory" data-step="11">
@@ -548,16 +548,13 @@
 <text class="st" x="247.5" y="846" text-anchor="middle">“Your axe bites deep.”</text>
 <circle class="token" cx="359" cy="856" r="5.5" style="--dx:-223px"/>
 </g>
-<line class="rulel" x1="300" y1="912" x2="900" y2="912"/>
-<text class="bigstat" x="600" y="944" text-anchor="middle">0.07 to 0.16 s</text>
-<text class="foot" x="600" y="968" text-anchor="middle">Fantasy Grounds command to receipt (live).</text>
 </svg>
 <!-- D2:END -->
           </div>
           <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
         </div>
         <figcaption class="tech-cap">
-          <p class="diagram-frame__cap">From a spoken sentence to a narrated result. The roll happens in Fantasy Grounds and comes back as a receipt in 0.07 to 0.16 seconds.</p>
+          <p class="diagram-frame__cap">From a spoken sentence to a narrated result. The roll happens in Fantasy Grounds and comes back as a receipt.</p>
           <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
         </figcaption>
       </figure>
@@ -899,12 +896,8 @@
         <h2 id="h-discipline">Engineering discipline</h2>
       </div>
       <div class="tech-disc">
-        <div class="stat-grid tech-disc__stats">
-          <div class="stat stat--ruled"><span class="stat__num">112</span><span class="stat__cap">automated tests (97 FGU Link, 15 Cory)</span></div>
-          <div class="stat stat--ruled"><span class="stat__num">6</span><span class="stat__cap">build gates, on every push</span></div>
-        </div>
         <ul class="tech-rules">
-          <li>112 automated tests (97 FGU Link, 15 Cory) and 6 build gates, on every push.</li>
+          <li>Automated tests and build gates on every push.</li>
           <li>Architecture tests fail the build if the core imports an outside library, or if any file not on an approved list calls an AI model.</li>
           <li>Every Fantasy Grounds command passes a validator before it runs, and returns a receipt after.</li>
           <li>One authenticated WebSocket between the GM’s PC and the cloud, with sequence numbers and resend after a reconnect, so nothing is lost when the connection drops.</li>
