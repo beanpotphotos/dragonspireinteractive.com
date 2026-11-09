@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Technology · DragonSpire Interactive</title>
-<meta name="description" content="Three services, two databases, one rule: only one service may call an AI model, and the game rules never depend on which model it is.">
+<meta name="description" content="Three services, two databases, one rule: only one service may call an LLM, and the game rules never depend on which model it is.">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("ds-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -46,7 +46,7 @@
     <div class="container co-hero__text">
       <p class="eyebrow">Technology</p>
       <h1 id="h-hero">How DragonSpire is built.</h1>
-      <p class="lede">Three services, two databases, one rule: only one service may call an AI model, and the game rules never depend on which model it is.</p>
+      <p class="lede">Three services, two databases, one rule: only one service may call an LLM, and the game rules never depend on which model it is.</p>
     </div>
   </section>
 
@@ -61,7 +61,7 @@
           <div class="tech-scroll" tabindex="0" role="region" aria-label="System diagram">
 <!-- D1:START -->
 <svg class="tech-svg" viewBox="0 0 1200 760" role="img" aria-labelledby="d1-t" focusable="false">
-<title id="d1-t">DragonSpire's parts and where they run: Fantasy Grounds and FGU Link on the GM's PC; Cory, Dee Emma, Campaign Manager and DragonLibrary on a cloud server; AI model providers and players on the internet; Cory is the only part that calls an AI model.</title>
+<title id="d1-t">DragonSpire's parts and where they run: Fantasy Grounds and FGU Link on the GM's PC; Cory, Dee Emma, Campaign Manager and DragonLibrary on a cloud server; AI model providers and players on the internet; Cory is the only part that calls an LLM; Dee Emma uses voice AI that is not an LLM.</title>
 <defs><marker id="d1-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d1-ar-p-dee" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-dee"/></marker><marker id="d1-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d1-ar-p-models" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-models"/></marker><marker id="d1-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d1-ar-p-players" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-players"/></marker></defs>
 <rect class="zone" x="24" y="56" width="300" height="634" rx="16"/>
 <text class="zt" x="44" y="84">GM'S PC (WINDOWS)</text>
@@ -144,7 +144,7 @@
 <text class="nm" x="406" y="136" font-size="26">Cory</text>
 <text class="tx" x="406" y="160">FastAPI engine, one Docker container</text>
 <text class="tx" x="406" y="179">per campaign; SQLite campaign data</text>
-<text class="tx tx-em" x="406" y="198">The only part that calls AI</text>
+<text class="tx tx-em" x="406" y="198">The only part that calls an LLM</text>
 </g>
 <g class="p-cm">
 <rect class="box" x="380" y="326" width="200" height="142" rx="10"/>
@@ -191,14 +191,14 @@
 <text class="tx" x="944" y="596">In the voice channel</text>
 </g>
 <path class="gem" d="M220,724 l6,6 l-6,6 l-6,-6 z"/>
-<text class="foot" x="236" y="735">Cory is the brain. FGU Link and Dee Emma decide nothing on their own and call no AI model.</text>
+<text class="foot" x="236" y="735">Cory is the brain. FGU Link and Dee Emma decide nothing on their own and call no LLM.</text>
 </svg>
 <!-- D1:END -->
           </div>
           <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
         </div>
         <figcaption class="tech-cap">
-          <p class="diagram-frame__cap">Cory, the engine, runs on a cloud server beside Dee Emma, the Discord voice, and Campaign Manager, the world database. FGU Link runs on the GM’s PC beside Fantasy Grounds. Cory is the only part that makes AI calls.</p>
+          <p class="diagram-frame__cap">Cory, the engine, runs on a cloud server beside Dee Emma, the Discord voice, and Campaign Manager, the world database. FGU Link runs on the GM’s PC beside Fantasy Grounds. Cory is the only part that calls an LLM; Dee Emma uses voice AI that is not an LLM.</p>
           <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
         </figcaption>
       </figure>
@@ -214,38 +214,38 @@
       <div class="table-wrap tech-parts">
         <table class="compare">
           <thead>
-            <tr><th scope="col">Part</th><th scope="col">Runs on</th><th scope="col">Built with</th><th scope="col">Calls AI?</th></tr>
+            <tr><th scope="col">Part</th><th scope="col">Runs on</th><th scope="col">Built with</th><th scope="col">Uses AI?</th></tr>
           </thead>
           <tbody>
             <tr class="p-cory">
               <th scope="row">Cory</th>
               <td data-label="Runs on">cloud server, one container per campaign</td>
               <td data-label="Built with">Python, FastAPI, SQLite</td>
-              <td data-label="Calls AI?"><span class="tech-yes">yes</span>, the only one</td>
+              <td data-label="Uses AI?"><span class="tech-yes">yes</span>, the only part that calls an LLM</td>
             </tr>
             <tr class="p-dee">
               <th scope="row">Dee Emma</th>
               <td data-label="Runs on">cloud server, 24/7</td>
               <td data-label="Built with">Python Discord bot</td>
-              <td data-label="Calls AI?"><span class="tech-no">no</span> (speech-to-text goes through Cory)</td>
+              <td data-label="Uses AI?"><span class="tech-yes">yes</span>, voice AI (JEV) and API calls, not an LLM (speech-to-text goes through Cory)</td>
             </tr>
             <tr class="p-fgu">
               <th scope="row">FGU Link</th>
               <td data-label="Runs on">GM’s Windows PC</td>
               <td data-label="Built with">Lua extension + Python daemon</td>
-              <td data-label="Calls AI?"><span class="tech-no">no</span>, enforced by tests</td>
+              <td data-label="Uses AI?"><span class="tech-no">no</span>, enforced by tests</td>
             </tr>
             <tr class="p-cm">
               <th scope="row">Campaign Manager</th>
               <td data-label="Runs on">cloud server, shared by every Cory</td>
               <td data-label="Built with">PocketBase database + React web app</td>
-              <td data-label="Calls AI?"><span class="tech-no">no</span></td>
+              <td data-label="Uses AI?"><span class="tech-no">no</span></td>
             </tr>
             <tr class="p-library">
               <th scope="row">DragonLibrary</th>
               <td data-label="Runs on">cloud server</td>
               <td data-label="Built with">PocketBase, public read-only API + browse website</td>
-              <td data-label="Calls AI?"><span class="tech-no">no</span> (codes were drafted offline, then checked and tiered)</td>
+              <td data-label="Uses AI?"><span class="tech-no">no</span> (codes were drafted offline, then checked and tiered)</td>
             </tr>
           </tbody>
         </table>
@@ -575,7 +575,7 @@
           <div class="tech-scroll" tabindex="0" role="region" aria-label="Where the truth lives diagram">
 <!-- D4:START -->
 <svg class="tech-svg" viewBox="0 0 1200 660" role="img" aria-labelledby="d4-t" focusable="false">
-<title id="d4-t">Where the truth lives: the AI model, for narration and judging what a player meant, stands on four foundations that hand it the facts before it speaks: game state in Fantasy Grounds, world memory in Campaign Manager, rules content in DragonLibrary, and fairness and pacing in tested Python code; its commands go down to Fantasy Grounds, checked and receipted.</title>
+<title id="d4-t">Where the truth lives: the AI model, for narration and judging what a player meant, stands on four foundations that hand it the facts before it speaks: game state in Fantasy Grounds, world memory in Campaign Manager, rules content in DragonLibrary, and pacing in tested Python code; its commands go down to Fantasy Grounds, checked and receipted.</title>
 <defs><marker id="d4-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d4-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d4-ar-p-library" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-library"/></marker><marker id="d4-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d4-ar-p-models" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-models"/></marker><marker id="d4-ar-rej" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-rej"/></marker></defs>
 <line class="span" x1="136" y1="262" x2="1014" y2="262"/>
 <path class="cn flow p-fgu" d="M136,334 L136,156" marker-end="url(#d4-ar-p-fgu)"/>
@@ -625,7 +625,7 @@
 <g class="p-cory">
 <rect class="box blk" x="888" y="340" width="252" height="214" rx="10"/>
 <rect class="rule" x="888" y="340" width="252" height="7" rx="3"/>
-<text class="role" x="910" y="384">FAIRNESS AND PACING</text>
+<text class="role" x="910" y="384">PACING</text>
 <text class="nm" x="910" y="420" font-size="24">Tested Python code</text>
 <text class="tx" x="910" y="454" font-size="16">never rolls for players,</text>
 <text class="tx" x="910" y="477" font-size="16">turn order, loot rules</text>
@@ -640,7 +640,7 @@
         </div>
         <figcaption class="tech-cap">
           <div class="tech-cap__text">
-          <p class="diagram-frame__cap">Narration and judgement come from the model; game state comes from Fantasy Grounds; world memory from Campaign Manager; rules content from DragonLibrary; fairness from tested code. The model is given the facts before it speaks, instead of being trusted to remember them.</p>
+          <p class="diagram-frame__cap">Narration and judgement come from the model; game state comes from Fantasy Grounds; world memory from Campaign Manager; rules content from DragonLibrary; pacing from tested code. The model is given the facts before it speaks, instead of being trusted to remember them.</p>
           </div>
           <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
         </figcaption>
