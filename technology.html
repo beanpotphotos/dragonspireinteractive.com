@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Technology · DragonSpire Interactive</title>
-<meta name="description" content="Three services, two databases, one rule: only one service may call an LLM, and the game rules never depend on which model it is.">
+<meta name="description" content="Three services, two databases, one rule: the game rules never depend on which model is used.">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("ds-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -46,7 +46,7 @@
     <div class="container co-hero__text">
       <p class="eyebrow">Technology</p>
       <h1 id="h-hero">How DragonSpire is built.</h1>
-      <p class="lede">Three services, two databases, one rule: only one service may call an LLM, and the game rules never depend on which model it is.</p>
+      <p class="lede">Three services, two databases, one rule: the game rules never depend on which model is used.</p>
     </div>
   </section>
 
@@ -61,7 +61,7 @@
           <div class="tech-scroll" tabindex="0" role="region" aria-label="System diagram">
 <!-- D1:START -->
 <svg class="tech-svg" viewBox="0 0 1200 760" role="img" aria-labelledby="d1-t" focusable="false">
-<title id="d1-t">DragonSpire's parts and where they run: Fantasy Grounds and FGU Link on the GM's PC; Cory, Dee Emma, Campaign Manager and DragonLibrary on a cloud server; AI model providers and players on the internet; Cory is the only part that calls an LLM; Dee Emma uses voice AI that is not an LLM.</title>
+<title id="d1-t">DragonSpire's parts and where they run: Fantasy Grounds and FGU Link on the GM's PC; Cory, Dee Emma, Campaign Manager and DragonLibrary on a cloud server; AI model providers and players on the internet; Cory and Dee Emma both call AI models; Dee Emma’s is a voice model.</title>
 <defs><marker id="d1-ar-p-cory" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cory"/></marker><marker id="d1-ar-p-dee" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-dee"/></marker><marker id="d1-ar-p-fgu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-fgu"/></marker><marker id="d1-ar-p-models" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-models"/></marker><marker id="d1-ar-p-cm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-cm"/></marker><marker id="d1-ar-p-players" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah p-players"/></marker></defs>
 <rect class="zone" x="24" y="56" width="300" height="634" rx="16"/>
 <text class="zt" x="44" y="84">GM'S PC (WINDOWS)</text>
@@ -144,7 +144,7 @@
 <text class="nm" x="406" y="136" font-size="26">Cory</text>
 <text class="tx" x="406" y="160">FastAPI engine, one Docker container</text>
 <text class="tx" x="406" y="179">per campaign; SQLite campaign data</text>
-<text class="tx tx-em" x="406" y="198">The only part that calls an LLM</text>
+<text class="tx tx-em" x="406" y="198">Calls AI models for the story</text>
 </g>
 <g class="p-cm">
 <rect class="box" x="380" y="326" width="200" height="142" rx="10"/>
@@ -191,14 +191,14 @@
 <text class="tx" x="944" y="596">In the voice channel</text>
 </g>
 <path class="gem" d="M220,724 l6,6 l-6,6 l-6,-6 z"/>
-<text class="foot" x="236" y="735">Cory is the brain. FGU Link and Dee Emma decide nothing on their own and call no LLM.</text>
+<text class="foot" x="236" y="735">Cory is the brain. FGU Link decides nothing on its own and calls no AI model.</text>
 </svg>
 <!-- D1:END -->
           </div>
           <p class="tech-scroll-hint mono" aria-hidden="true">Scroll sideways <span>→</span></p>
         </div>
         <figcaption class="tech-cap">
-          <p class="diagram-frame__cap">Cory, the engine, runs on a cloud server beside Dee Emma, the Discord voice, and Campaign Manager, the world database. FGU Link runs on the GM’s PC beside Fantasy Grounds. Cory is the only part that calls an LLM; Dee Emma uses voice AI that is not an LLM.</p>
+          <p class="diagram-frame__cap">Cory, the engine, runs on a cloud server beside Dee Emma, the Discord voice, and Campaign Manager, the world database. FGU Link runs on the GM’s PC beside Fantasy Grounds. Cory and Dee Emma both call AI models; Dee Emma’s is a voice model.</p>
           <button class="tech-motion" type="button" data-tech-motion>Pause animation</button>
         </figcaption>
       </figure>
@@ -221,13 +221,13 @@
               <th scope="row">Cory</th>
               <td data-label="Runs on">cloud server, one container per campaign</td>
               <td data-label="Built with">Python, FastAPI, SQLite</td>
-              <td data-label="Uses AI?"><span class="tech-yes">yes</span>, the only part that calls an LLM</td>
+              <td data-label="Uses AI?"><span class="tech-yes">yes</span>, AI models for the story and judgement</td>
             </tr>
             <tr class="p-dee">
               <th scope="row">Dee Emma</th>
               <td data-label="Runs on">cloud server, 24/7</td>
               <td data-label="Built with">Python Discord bot</td>
-              <td data-label="Uses AI?"><span class="tech-yes">yes</span>, voice AI and API calls, not an LLM (speech-to-text goes through Cory)</td>
+              <td data-label="Uses AI?"><span class="tech-yes">yes</span>, a voice model (speech-to-text goes through Cory)</td>
             </tr>
             <tr class="p-fgu">
               <th scope="row">FGU Link</th>
